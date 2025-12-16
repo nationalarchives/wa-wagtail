@@ -1,0 +1,18 @@
+{% load wagtailcore_tags %}
+
+<nav class="tna-column tna-column--flex-1 tna-column--full-small tna-column--full-tiny tna-header__navigation" id="tna-header__navigation" aria-label="Primary">
+    <ul class="tna-header__navigation-items">
+        {% for link in primary_nav %}
+            {% with children=link.value.page.get_children.live.public.in_menu %}
+                <li
+                    class="tna-header__navigation-item primary-nav__item {% if children.exists %}primary-nav__item--is-parent{% endif %}"
+                >
+                    {% pageurl link.value.page as item_url %}
+                    <a class="tna-header__navigation-item-link" href="{{ item_url }}">
+                        {{ title|default:page.title }}
+                    </a>
+                </li>
+            {% endwith %}
+        {% endfor %}
+    </ul>
+</nav>

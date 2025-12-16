@@ -1,0 +1,8 @@
+context:
+  img_class: ''
+  alt_text: 'Alt text here'
+  lazy_loading: True
+  rendition_1x: !testrendition 'fill-500x400'
+  rendition_2x: !testrendition 'fill-1000x600'
+  rendition_1x_webp: !testrendition 'fill-500x400'
+  rendition_2x_webp: !testrendition 'fill-1000x600'

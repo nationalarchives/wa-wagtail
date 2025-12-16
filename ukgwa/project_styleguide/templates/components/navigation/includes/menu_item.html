@@ -1,0 +1,9 @@
+{% load wagtailcore_tags %}
+{% pageurl page as item_url %}
+<a class="{{ nav_type }}__link"
+   {% if has_children %}data-open-subnav aria-haspopup="true" aria-expanded="false"{% endif %}
+   href="{{ item_url }}">
+    {{ title|default:page.title }}
+    {% if overview_title %}{{ overview_title }}{% endif %}
+    {% if has_children %}<span class="{{ nav_type }}__icon">&rsaquo;</span>{% endif %}
+</a>

@@ -1,0 +1,36 @@
+@use 'config' as *;
+
+// Vendor
+@use '../../../node_modules/@nationalarchives/frontend/nationalarchives/all.css';
+
+// Base
+@use 'base/base';
+@use 'base/typography';
+@use 'base/fonts';
+
+// Components
+@use 'components/accordion';
+@use 'components/blockquote';
+@use 'components/button';
+@use 'components/call-to-action';
+@use 'components/card';
+@use 'components/icon';
+@use 'components/responsive-object';
+@use 'components/rich-text';
+@use 'components/skip-link';
+@use 'components/sprites-preview-icons';
+@use 'components/table';
+
+// Navigation
+@use 'components/navigation/breadcrumbs-nav';
+@use 'components/navigation/footerlinks-nav';
+@use 'components/navigation/footercolumn-nav';
+@use 'components/navigation/secondary-nav';
+
+// Layout
+@use 'layout/footer';
+@use 'layout/header';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

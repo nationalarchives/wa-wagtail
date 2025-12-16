@@ -1,0 +1,6 @@
+{% load image_tags %}
+
+{% responsive_image image=image rendition_1x="width-500" rendition_2x="width-1000" alt_text=image_alt_text %}
+{% if value.caption %}
+    <p>{{ value.caption }}</p>
+{% endif %}

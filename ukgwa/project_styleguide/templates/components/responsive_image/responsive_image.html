@@ -1,0 +1,18 @@
+<picture class="{{ class_name }}">
+    <source srcset="{{ rendition_1x_webp.url }} 1x, {{ rendition_2x_webp.url }} 2x" type="image/webp">
+    <img
+        class="{{ img_class }}"
+        src="{{ rendition_1x.url }}"
+        width="{{ rendition_1x.width }}"
+        height="{{ rendition_1x.height }}"
+        alt="{{ alt_text }}"
+        {% if lazy_loading %}
+            loading="lazy"
+        {% endif %}
+        {# Using an inline style for the focal point as Tailwind can't parse the variable #}
+        {% if rendition_1x.focal_point and object_cover %}
+            {# Replace 'background-position' with 'object-position' #}
+            style="object-position: {{ rendition_1x.background_position_style|slice:"21:" }}"
+        {% endif %}
+    />
+</picture>

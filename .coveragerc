@@ -1,0 +1,16 @@
+[run]
+source =
+    ./ukgwa/
+command_line = ./manage.py test --noinput --parallel --settings=ukgwa.settings.test
+concurrency = multiprocessing
+branch = True
+omit =
+    **/tests.py
+    **/test_*.py
+    **/migrations/*.py
+    ukgwa/settings/*.py
+    ukgwa/wsgi.py
+
+[report]
+sort = cover
+skip_empty = true

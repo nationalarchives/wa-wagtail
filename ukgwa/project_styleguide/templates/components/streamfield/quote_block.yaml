@@ -1,0 +1,5 @@
+context:
+  quote: 'Quote... ipsum dolor sit amet consectetur. Nisl commodo nulla faucibus viverra '
+  attribution: 'Some attribution'
+  link_text: 'This is an optional link'
+  link_url: '#'

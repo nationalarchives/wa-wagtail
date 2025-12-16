@@ -1,0 +1,9 @@
+context:
+  thumbnail_url: 'https://placehold.co/600x400'
+  is_youtube: True
+  value:
+    title: Video heading
+    description: Paragraph... ipsum dolor sit amet consectetur. Nisl commodo nulla faucibus viverra eget sit bibendum pharetra. Elementum in facilisis diam ultricies ac diam. Accumsan ut varius amet sit suspendisse. Volutpat posuere aliquet in convallis.
+    embed:
+      url: https://youtu.be/ym_eXrQxvbw?si=QjOqOO_D7hvUS0fe
+    caption: 'Video caption'

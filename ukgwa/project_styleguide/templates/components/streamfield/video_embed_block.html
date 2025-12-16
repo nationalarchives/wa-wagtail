@@ -1,0 +1,44 @@
+{% load wagtailembeds_tags %}
+
+<div>
+    {% if value.title %}
+        <h3>{{ value.title }}</h3>
+    {% endif %}
+
+    {% if value.description %}
+        <p>{{ value.description }}</p>
+    {% endif %}
+
+    {% if is_youtube %}
+        <div data-youtube-embed>
+            {# Placeholder #}
+            <div data-youtube-placeholder-container>
+                <img src="{{ thumbnail_url }}" alt="Video Thumbnail">
+
+                <div>
+                    <p>This content is hosted by a third party. By showing the external content you accept the <a href="https://www.youtube.com/t/terms" target="_blank">terms and conditions</a> of YouTube.</p>
+                    <div>
+                        <a href="#" data-youtube-consent-button>I accept</a>>
+                        <div>
+                            <input type="checkbox" id="youtube-consent-checkbox" data-youtube-save-prefs>
+                            <label for="youtube-consent-checkbox">Don't ask me again</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# Embed itself #}
+            <div data-youtube-embed-container>
+                <div>
+                    {% embed value.embed.url %}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div>
+            <div>
+                {% embed value.embed.url %}
+            </div>
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,31 @@
+context:
+  page:
+    title: Test listing page
+    introduction: Test intro for this listing page
+  subpages:
+    object_list:
+      exists: true
+      specific:
+        - title: Test sub page
+          listing_image: !testimage
+          listing_summary: Listing summary for the sub page
+        - title: Another test sub page
+          listing_image: !testimage
+          listing_summary: Listing summary for the sub page
+        - title: Another test sub page
+          listing_image: !testimage
+          listing_summary: Listing summary for the sub page
+
+tags:
+  primary_nav:
+    '':
+      template_name: 'components/navigation/primary_nav.html'
+  secondary_nav:
+    '':
+      template_name: 'components/navigation/secondary_nav.html'
+  footer_nav:
+    '':
+      template_name: 'components/navigation/footer_nav.html'
+  footer_links:
+    '':
+      template_name: 'components/navigation/footer_links.html'

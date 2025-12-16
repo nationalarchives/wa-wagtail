@@ -1,0 +1,32 @@
+site_name: UK Government Web Archive
+repo_url: https://github.com/nationalarchives/wa-wagtail
+site_url:
+edit_uri: 'edit/master/docs/'
+
+repo_name: GitHub
+dev_addr: 0.0.0.0:8001
+theme:
+  name: material
+  font: false
+markdown_extensions:
+  - codehilite
+  - admonition
+  - sane_lists
+  - toc:
+      permalink: true
+  # pymdown-extensions meant to bring the Markdown implementation closer to GFM.
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - 'Home': 'index.md'
+  - 'Project conventions': 'project_conventions.md'
+  - 'Front-end':
+      - 'Tooling': 'front-end/tooling.md'
+      - 'Placeholder images': 'front-end/placeholder_images.md'
+  - 'Continuous integration': 'continuous-integration.md'
+  - 'Anonymised data': 'anonymised_data.md'
+  - 'Upgrading guidelines': 'upgrading.md'

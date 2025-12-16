@@ -1,0 +1,12 @@
+context:
+  related_pages:
+    - title: Related page
+      listing_title: Related page listing title
+      listing_summary: Some related page intro
+      listing_image: !testimage
+
+tags:
+  pageurl:
+    item as item_url:
+      target_var: item_url
+      raw: '#'

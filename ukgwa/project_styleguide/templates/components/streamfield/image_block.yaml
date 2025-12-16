@@ -1,0 +1,4 @@
+context:
+  value:
+    caption: Some caption
+    image: !testimage
