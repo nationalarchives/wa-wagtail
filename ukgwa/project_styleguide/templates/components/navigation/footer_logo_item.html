@@ -1,8 +1,0 @@
-{% load wagtailimages_tags %}
-{% if value.url %}
-    <a href="{{ value.url }}" target="_blank">
-        {% image value.logo.image fill-150x70 format-webp loading="lazy" alt=value.logo.image_alt_text %}
-    </a>
-{% else %}
-    {% image value.logo.image fill-150x70 format-webp loading="lazy" alt=value.logo.image_alt_text %}
-{% endif %}

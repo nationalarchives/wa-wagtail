@@ -4,8 +4,6 @@ from django.forms.utils import ErrorList
 from wagtail import blocks
 from wagtail.blocks.struct_block import StructBlockValidationError
 
-from ukgwa.core.blocks import ImageBlock
-
 
 class LinkBlockStructValue(blocks.StructValue):
     def url(self):
@@ -116,11 +114,3 @@ class LinkColumnWithHeaderBlock(blocks.StructBlock):
 
     class Meta:
         template = ("components/navigation/footer_column.html",)
-
-
-class LogoLinkBlock(blocks.StructBlock):
-    logo = ImageBlock()
-    url = blocks.URLBlock(required=False)
-
-    class Meta:
-        template = ("components/navigation/footer_logo_item.html",)

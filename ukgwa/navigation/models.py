@@ -7,7 +7,6 @@ from ukgwa.navigation.blocks import (
     InternalLinkBlock,
     LinkBlock,
     LinkColumnWithHeaderBlock,
-    LogoLinkBlock,
 )
 
 
@@ -32,11 +31,6 @@ class NavigationSettings(BaseSiteSetting, ClusterableModel):
         [("link", LinkBlock())],
         blank=True,
         help_text="Single list of elements at the base of the page.",
-    )
-    footer_logo_cloud = StreamField(
-        [("logo", LogoLinkBlock())],
-        blank=True,
-        help_text="Logo cloud at the base of the page.",
     )
 
     panels = [
