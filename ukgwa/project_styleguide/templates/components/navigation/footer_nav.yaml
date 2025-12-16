@@ -2,9 +2,8 @@ context:
   footer_nav:
     - dummy
     - dummy
-    - dummy
 
 tags:
   include_block:
-    footer:
+    column:
       template_name: 'components/navigation/footer_column.html'

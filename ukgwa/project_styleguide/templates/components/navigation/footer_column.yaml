@@ -2,11 +2,17 @@ context:
   value:
     heading: Column heading
     links:
-      - dummy
-      - dummy
-      - dummy
+      - text: Archived Websites
+        page:
+          title: Archived Websites
+      - text: Archived Social Channels
+        external_link: #
+      - text: Submit a Website or Channel
+        external_link: #
 
 tags:
-  include_block:
-    'item with nav_type="footercolumn-nav"':
-      template_name: 'components/navigation/menu_item.html'
+  pageurl:
+    'link.url':
+      raw: '#'
+    link:
+      raw: '#'

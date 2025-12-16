@@ -1,10 +1,23 @@
 {% load wagtailcore_tags %}
-<nav aria-label="Secondary footer">
-    <ul class="footerlinks-nav">
-        {% for link in footer_links %}
-            <li class="footerlinks-nav__item">
-                {% include_block link with nav_type="footerlinks-nav" %}
-            </li>
-        {% endfor %}
-    </ul>
-</nav>
+<div class="tna-container">
+    <h3 class="tna-!--visually-hidden">
+        Legal information
+    </h3>
+    <nav class="tna-footer__legal tna-column tna-column--full" aria-label="Legal">
+        <ul class="tna-footer__legal-items tna-ul tna-ul--plain">
+            {% for item in footer_links %}
+                <li class="tna-footer__legal-item">
+                    {% with link=item.value %}
+                        <a
+                            href="{% if link.page %}{% pageurl link.page %}{% elif link.external_link %}{{ link.external_link }}{% endif %}"
+                            class="tna-footer__legal-item-link"
+                        >
+                            {{ link.text }}
+                        </a>
+                    {% endwith %}
+                </li>
+            {% endfor %}
+        </ul>
+        <hr>
+    </nav>
+</div>

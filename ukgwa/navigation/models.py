@@ -1,49 +1,25 @@
 from modelcluster.models import ClusterableModel
-from wagtail import blocks
 from wagtail.admin.panels import FieldPanel
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import StreamField
 
-from ukgwa.core.blocks import ImageBlock
-
-
-class LinkBlock(blocks.StructBlock):
-    page = blocks.PageChooserBlock()
-    title = blocks.CharBlock(
-        help_text="Leave blank to use the page's own title", required=False
-    )
-
-    class Meta:
-        template = ("components/navigation/menu_item.html",)
-
-
-class LinkColumnWithHeaderBlock(blocks.StructBlock):
-    heading = blocks.CharBlock(
-        required=False, help_text="Leave blank if no header required."
-    )
-    links = blocks.ListBlock(LinkBlock())
-
-    class Meta:
-        template = ("components/navigation/footer_column.html",)
-
-
-class LogoLinkBlock(blocks.StructBlock):
-    logo = ImageBlock()
-    url = blocks.URLBlock(required=False)
-
-    class Meta:
-        template = ("components/navigation/footer_logo_item.html",)
+from ukgwa.navigation.blocks import (
+    InternalLinkBlock,
+    LinkBlock,
+    LinkColumnWithHeaderBlock,
+    LogoLinkBlock,
+)
 
 
 @register_setting(icon="list-ul")
 class NavigationSettings(BaseSiteSetting, ClusterableModel):
     primary_navigation = StreamField(
-        [("link", LinkBlock())],
+        [("link", InternalLinkBlock())],
         blank=True,
         help_text="Main site navigation",
     )
     secondary_navigation = StreamField(
-        [("link", LinkBlock())],
+        [("link", InternalLinkBlock())],
         blank=True,
         help_text="Alternative navigation",
     )
@@ -68,5 +44,4 @@ class NavigationSettings(BaseSiteSetting, ClusterableModel):
         FieldPanel("secondary_navigation"),
         FieldPanel("footer_navigation"),
         FieldPanel("footer_links"),
-        FieldPanel("footer_logo_cloud"),
     ]
