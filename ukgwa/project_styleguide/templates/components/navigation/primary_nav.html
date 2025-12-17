@@ -9,7 +9,7 @@
                 >
                     {% pageurl link.value.page as item_url %}
                     <a class="tna-header__navigation-item-link" href="{{ item_url }}">
-                        {{ title|default:page.title }}
+                        {{ link.value.title|default:link.value.page.title }}
                     </a>
                 </li>
             {% endwith %}
