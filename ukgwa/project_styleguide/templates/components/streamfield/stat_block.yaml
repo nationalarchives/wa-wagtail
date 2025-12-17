@@ -1,0 +1,11 @@
+context:
+  stats:
+    - number: "1,200"
+      sentence: "Records digitised in 2024"
+      link_url: "/collections/"
+      link_text: "View the collection"
+    - number: "95%"
+      sentence: "Customer satisfaction rate"
+    - number: "24/7"
+      sentence: "Online access available"
+
