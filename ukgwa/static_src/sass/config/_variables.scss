@@ -75,6 +75,13 @@ $color--default: $color--off-black;
     --color-green: #{map.get($tna-colours, 'green')};
     --color-blue: #{map.get($tna-colours, 'blue')};
 
+    // Additional colours
+    --color-red: #d4351c;
+
+    // Globals
+    --global-header-background: var(--color-not-black);
+    --global-footer-background: var(--color-grey-800);
+
     // Theme colours
     --theme-primary: var(--color-maroon);
     --theme-secondary: var(--color-pastel-pink);
@@ -84,17 +91,32 @@ $color--default: $color--off-black;
     --theme-hero-background: var(--color-pastel-pink);
     --theme-dropdown-background: var(--color-black);
     --theme-dropdown-text: var(--color-white);
+    --theme-button-background: var(--color-black);
+    --theme-button-text: var(--color-white);
+    --theme-button-hover: var(--color--not-black);
     --theme-border: var(--color-grey-300);
     --theme-icon: var(--color-grey-500);
     --theme-link: var(--color-black);
     --theme-link-hover: var(--theme-primary);
     --theme-link-focus: var(--theme-primary);
+    --theme-link-invert: var(--color-white);
+    --theme-link-invert-hover: var(--color-grey-200);
+    --theme-link-invert-focus: var(--color-grey-200);
 
     // Theme text colours
     --theme-text-default: var(--color-black);
     --theme-text-80: var(--color-grey-800);
     --theme-text-70: var(--color-grey-700);
     --theme-text-60: var(--color-grey-600);
+    --theme-text-invert: var(--color-white);
+    --theme-text-meta: var(--color-grey-600);
+    --theme-text-primary: var(--theme-primary);
+
+    // Banner colours
+    --banner-background-default: var(--color-yellow);
+    --banner-background-warning: var(--color-red);
+    --banner-background-positive: var(--color-forest);
+    --banner-text: var(--theme-text-invert);
 }
 
 // --------------------------------- Fonts -------------------------------------
