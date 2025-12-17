@@ -24,6 +24,7 @@ export default class Header {
 
             nav.hidden = !showNav;
             nav.classList.toggle('tna-header__navigation--open', showNav);
+            nav.setAttribute('aria-hidden', String(!showNav));
 
             button.classList.toggle(
                 'tna-header__navigation-button--opened',
@@ -46,4 +47,3 @@ export default class Header {
         sync();
     }
 }
-
