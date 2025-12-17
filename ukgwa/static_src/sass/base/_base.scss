@@ -63,6 +63,14 @@ a {
         color: var(--theme-link-hover);
         cursor: pointer;
     }
+
+    .u-dark-bg & {
+        color: var(--theme-link-invert);
+
+        &:hover {
+            color: var(--theme-link-invert-hover);
+        }
+    }
 }
 
 ul,

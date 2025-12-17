@@ -6,4 +6,11 @@
         height: 24px;
         width: 24px;
     }
+
+    &--logo {
+        .footer & {
+            width: 85px;
+            height: 85px;
+        }
+    }
 }

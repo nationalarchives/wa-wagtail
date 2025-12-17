@@ -1,11 +1,12 @@
 {% load static wagtailcore_tags navigation_tags %}
 
-<footer class="footer tna-footer" data-module="tna-footer">
+<footer class="footer u-dark-bg tna-footer" data-module="tna-footer">
   <div class="footer__container tna-footer__inner">
     <div class="tna-container">
       <div class="tna-column tna-column--flex-1" itemscope itemtype="https://schema.org/Organization">
         {% include "components/icons/icon.html" with name="logo" classname="tna-logo" viewbox="0 0 160 160" %}
-        <h2 class="tna-heading-m tna-footer__title" itemprop="name" translate="no">The National Archives</h2>
+        <h2 class="tna-heading-m tna-footer__title footer__strapline" itemprop="name" translate="no">UK Government<br> Web Archive</h2>
+        <b>The National Archives</b>
         <address class="tna-footer__address" translate="no" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
           <meta itemprop="streetAddress" content="Bessant Drive">
           <span itemprop="addressLocality">Kew</span>, <span itemprop="addressRegion">Richmond</span><br>
@@ -24,7 +25,7 @@
         <h3 class="tna-!--visually-hidden">
             Follow us on social media
           </h3>
-        <ul class="tna-ul tna-ul--plain tna-footer__social-items">
+        <ul class="footer__social tna-ul tna-ul--plain tna-footer__social-items">
           {% if settings.core.SocialMediaSettings.twitter_handle %}
             <li class="tna-footer__social-item">
                 <a class="tna-footer__social-item-link" href="https://twitter.com/{{ settings.core.SocialMediaSettings.twitter_handle }}">

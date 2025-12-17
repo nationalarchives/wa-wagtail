@@ -1,6 +1,7 @@
 @use 'config' as *;
 
 // Uses https://design-system.nationalarchives.gov.uk/components/header/ as a base, these are just subtle overrides
+// Note: We have to override the breakpoint that the desktop nav kicks in due to the nav site
 
 .header {
     background: var(
