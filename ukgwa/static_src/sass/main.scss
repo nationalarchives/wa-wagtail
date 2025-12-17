@@ -28,8 +28,8 @@
 @use 'components/navigation/secondary-nav';
 
 // Layout
-@use 'layout/footer';
-@use 'layout/header';
+@use 'global/footer';
+@use 'global/header';
 
 @tailwind base;
 @tailwind components;
