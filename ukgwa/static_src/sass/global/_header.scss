@@ -3,5 +3,7 @@
 // Uses https://design-system.nationalarchives.gov.uk/components/header/ as a base, these are just subtle overrides
 
 .header {
-    background-color: var(--global-header-background);
+    background: var(
+        --global-header-background
+    ); // needs to be background to override TNA Frontend background
 }

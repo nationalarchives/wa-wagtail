@@ -1,11 +1,20 @@
 context:
   primary_nav:
-    - dummy
-    - dummy
-    - dummy
+    - value:
+        title: Archived Websites
+        page:
+          title: Archived Websites
+    - value:
+        title: Archived Social Channels
+        page:
+          title: Archived Social Channels
+    - value:
+        title: Submit a Website or Channel
+        page:
+          title: Submit a Website or Channel
 
 tags:
   pageurl:
-    'page as item_url':
+    'link.value.page as item_url':
       target_var: item_url
       raw: '#'

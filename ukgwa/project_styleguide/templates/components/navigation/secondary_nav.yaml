@@ -1,8 +1,9 @@
 context:
   secondary_nav:
-    - dummy
-    - dummy
-    - dummy
+    - value:
+        title: About us
+        page:
+          title: About us
 
 tags:
   pageurl:

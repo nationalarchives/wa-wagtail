@@ -80,6 +80,7 @@ $color--default: $color--off-black;
 
     // Globals
     --global-header-background: var(--color-not-black);
+    --global-footer-background: var(--color-grey-800);
 
     // Theme colours
     --theme-primary: var(--color-maroon);
@@ -94,7 +95,7 @@ $color--default: $color--off-black;
     --theme-button-text: var(--color-white);
     --theme-button-hover: var(--color--not-black);
     --theme-border: var(--color-grey-300);
-    --theme-border-inverted: var(--color-grey-800);
+    --theme-border-inverted: var(--color-grey-600);
     --theme-icon: var(--color-grey-500);
     --theme-link: var(--color-black);
     --theme-link-hover: var(--theme-primary);
@@ -121,7 +122,7 @@ $color--default: $color--off-black;
     // Vars from TNA not included in design system
     --contrast-font-light: var(--theme-text-invert);
     --contrast-font-base: var(--theme-text-invert);
-    --contrast-background: var(--color-black);
+    --contrast-background: var(--global-footer-background);
     --contrast-font-dark: var(--color-white);
     --contrast-link: var(--color-white);
     --contrast-link-visited: var(--color-white);

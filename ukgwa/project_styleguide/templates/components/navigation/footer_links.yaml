@@ -1,5 +1,17 @@
 context:
   footer_links:
-    - dummy
-    - dummy
-    - dummy
+    - value:
+        title: Accessibility
+        url: '#'
+        page:
+          title: Accessibility
+    - value:
+        title: Take down Policy
+        url: '#'
+        page:
+          title: Take down Policy
+    - value:
+        title: Cookies
+        url: '#'
+        page:
+          title: Cookies

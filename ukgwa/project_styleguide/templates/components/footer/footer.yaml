@@ -1,0 +1,15 @@
+context:
+  settings:
+    core:
+      SocialMediaSettings:
+        twitter_handle: 'UKWebArchive'
+        facebook_app_id: 'UKWebArchive'
+
+tags:
+  footer_nav:
+    '':
+      template_name: 'components/navigation/footer_nav.html'
+  footer_links:
+    '':
+      template_name: 'components/navigation/footer_links.html'
+

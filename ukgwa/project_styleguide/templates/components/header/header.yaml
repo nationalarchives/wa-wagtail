@@ -1,0 +1,12 @@
+tags:
+  primary_nav:
+    '':
+      template_name: 'components/navigation/primary_nav.html'
+  secondary_nav:
+    '':
+      template_name: 'components/navigation/secondary_nav.html'
+  pageurl:
+    'link.value.page as item_url':
+      target_var: item_url
+      raw: '#'
+
