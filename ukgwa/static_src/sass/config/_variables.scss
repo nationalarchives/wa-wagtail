@@ -184,6 +184,10 @@ $small-font-sizes: (
 
 $breakpoints: ('medium' '(min-width: 599px)', 'large' '(min-width: 1023px)');
 
+// Custom breakpoint for mobile navigation
+// TNA Frontend default is 48em (768px), we want it to kick in sooner at larger screens
+$header-mobile-nav-breakpoint: 64em; // 1024px
+
 // Layout
 $site-width: 1280px;
 
