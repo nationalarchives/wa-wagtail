@@ -1,8 +1,23 @@
 {% load wagtailcore_tags %}
-<nav aria-label="Secondary">
-    <ul class="secondary-nav">
-        {% for link in secondary_nav %}
-            <li class="secondary-nav__item">{% include_block link with nav_type="secondary-nav" %}</li>
-        {% endfor %}
-    </ul>
-</nav>
+<ul class="tna-header__top-navigation-items">
+    <li class="tna-header__top-navigation-item">
+        <a href="https://www.nationalarchives.gov.uk/" class="tna-header__top-navigation-item-link" tabindex="0">
+            {% include "components/icons/icon.html" with name="arrow" classname="secondary-nav__icon" %}
+            Back to The National Archives
+        </a>
+    </li>
+    {% for link in secondary_nav %}
+        <li class="tna-header__top-navigation-item">
+            {% pageurl link.value.page as item_url %}
+            <a href="{{ item_url }}" class="tna-header__top-navigation-item-link" tabindex="0">
+                {{ link.value.title|default:link.value.page.title }}
+            </a>
+        </li>
+    {% endfor %}
+    <li class="tna-header__top-navigation-item">
+        <a href="/search/" class="tna-header__top-navigation-item-link" tabindex="0">
+            {% include "components/icons/icon.html" with name="search" classname="secondary-nav__icon" %}
+            Search
+        </a>
+    </li>
+</ul>
