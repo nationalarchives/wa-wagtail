@@ -1,0 +1,9 @@
+@use 'config' as *;
+
+.icon {
+    &--back-arrow,
+    &--search {
+        height: 24px;
+        width: 24px;
+    }
+}

@@ -6,4 +6,29 @@
     background: var(
         --global-header-background
     ); // needs to be background to override TNA Frontend background
+
+    &__strapline {
+        text-transform: none;
+        max-width: 140px;
+        font-family: $font--primary;
+
+        @include media-query(medium) {
+            position: relative;
+            top: 6px;
+        }
+    }
+
+    &__logo {
+        column-gap: $grid-xs;
+    }
+
+    &__secondary-link {
+        @include font-size(supporting) {
+            display: flex;
+            height: 100%; // ensure items without icons fill whole height
+            align-items: center;
+            gap: $grid-xxs;
+            line-height: 1;
+        }
+    }
 }
