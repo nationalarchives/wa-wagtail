@@ -117,6 +117,10 @@ $color--default: $color--off-black;
     --banner-background-warning: var(--color-red);
     --banner-background-positive: var(--color-forest);
     --banner-text: var(--theme-text-invert);
+
+    // Vars from TNA not included in design system
+    --contrast-font-light: var(--theme-text-invert);
+    --contrast-font-base: var(--theme-text-invert);
 }
 
 // --------------------------------- Fonts -------------------------------------

@@ -1,5 +1,7 @@
 @use 'config' as *;
 
-.tna-header {
+// Uses https://design-system.nationalarchives.gov.uk/components/header/ as a base, these are just subtle overrides
+
+.header {
     background-color: var(--global-header-background);
 }
