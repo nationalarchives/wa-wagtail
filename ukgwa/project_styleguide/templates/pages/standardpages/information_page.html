@@ -3,29 +3,33 @@
 
 {% block content %}
 
-    {% include "components/progress_bar/progress_bar.html" %}
+    <div class="page">
+        {% block breadcrumbs %}
+            {% include "components/navigation/breadcrumbs.html" %}
+        {% endblock %}
 
-    <div class="layout{% if page.get_children.live %} layout--sidebar{% endif %}">
+        {% include "components/page_header/page_header.html" %}
 
-        <div class="content">
-            {% block breadcrumbs %}
-                {% include "components/navigation/breadcrumbs.html" %}
-            {% endblock %}
+        <div class="u-layout">
 
-            <h1>{{ page.title }}</h1>
-            {% get_reading_time_minutes page 'body' as reading_time_minutes %}
-            {{ reading_time_minutes }} minute read
-            {% if page.introduction %}
-                <p>{{ page.introduction }}</p>
-            {% endif %}
+            <div class="u-layout__primary-col col-span-full md:col-span-8">
 
-            {% include_block page.body %}
-            {% include "components/share/share.html" %}
+                {% if page.introduction %}
+                    <div class="introduction">
+                        <p>{{ page.introduction }}</p>
+                    </div>
+                {% endif %}
 
+                <div class="sf">
+                    {% include_block page.body %}
+                </div>
+
+            </div>
+
+            <div class="u-layout__secondary-col col-span-full md:col-span-4">
+                {% sidebar %}
+            </div>
         </div>
-
-        {% sidebar %}
-
     </div>
 
     {% include "components/related_content/related_content.html" with related_pages=page.related_pages %}

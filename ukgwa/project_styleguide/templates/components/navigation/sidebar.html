@@ -2,7 +2,7 @@
 {% if children %}
     <div class="sidebar">
         <div class="sidebar__inner">
-            <h2>In this section</h2>
+            <h2>Also in {{ page.title }}</h2>
             <ul>
                 {% for child in children %}
                     <li><a href="{% pageurl child %}">{{ child.title }}</a></li>

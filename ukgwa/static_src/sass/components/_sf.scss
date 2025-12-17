@@ -1,0 +1,19 @@
+@use 'config' as *;
+
+.sf {
+    $root: &;
+
+    &__block {
+        margin-bottom: $grid-s;
+
+        @include media-query(large) {
+            margin-bottom: $grid-m;
+        }
+
+        // Smaller margin
+        &--heading,
+        &--image {
+            margin-bottom: $grid-xs;
+        }
+    }
+}

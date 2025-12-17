@@ -1,9 +1,0 @@
-context:
-  settings:
-    utils:
-      SocialMediaSettings:
-        site_name: 'Stub site name'
-        twitter_handle: '@test'
-        facebook_app_id: 123
-  page:
-    social_image: !testimage
