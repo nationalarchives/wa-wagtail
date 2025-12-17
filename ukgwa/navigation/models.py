@@ -13,9 +13,6 @@ class LinkBlock(blocks.StructBlock):
         help_text="Leave blank to use the page's own title", required=False
     )
 
-    class Meta:
-        template = ("components/navigation/menu_item.html",)
-
 
 class LinkColumnWithHeaderBlock(blocks.StructBlock):
     heading = blocks.CharBlock(

@@ -5,6 +5,7 @@ context:
     - dummy
 
 tags:
-  include_block:
-    link with nav_type="secondary-nav":
-      template_name: 'components/navigation/menu_item.html'
+  pageurl:
+    'link.value.page as item_url':
+      target_var: item_url
+      raw: '#'

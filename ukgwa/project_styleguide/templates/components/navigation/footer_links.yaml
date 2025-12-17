@@ -3,8 +3,3 @@ context:
     - dummy
     - dummy
     - dummy
-
-tags:
-  include_block:
-    'link with nav_type="footerlinks-nav"':
-      template_name: 'components/navigation/menu_item.html'

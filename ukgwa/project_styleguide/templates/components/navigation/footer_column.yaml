@@ -5,8 +5,3 @@ context:
       - dummy
       - dummy
       - dummy
-
-tags:
-  include_block:
-    'item with nav_type="footercolumn-nav"':
-      template_name: 'components/navigation/menu_item.html'
