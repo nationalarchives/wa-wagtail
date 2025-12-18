@@ -1,0 +1,16 @@
+{% if heading and highlighted_links %}
+    <div class="layout">
+        <h2 id="related-content-heading">{{ heading }}</h2>
+        <section class="grid" aria-labelledby="related-content-heading">
+            {% for item in highlighted_links %}
+                {% with link=item.value %}
+                    <a class="card" href="{{ link.url }}">
+                        <h3>{{ link.link_text }}</h3>
+                        test
+                        <span>{{ link.url }}</span>
+                    </a>
+                {% endwith %}
+            {% endfor %}
+        </section>
+    </div>
+{% endif %}

@@ -3,8 +3,6 @@
 
 {% block content %}
 
-    {% include "components/progress_bar/progress_bar.html" %}
-
     <div class="layout{% if page.get_children.live %} layout--sidebar{% endif %}">
 
         <div class="content">
@@ -28,6 +26,6 @@
 
     </div>
 
-    {% include "components/related_content/related_content.html" with related_pages=page.related_pages %}
+    {% include "components/highlighted_links/highlighted_links.html" with heading=page.highlighted_links_heading highlighted_links=page.highlighted_links %}
 
 {% endblock %}

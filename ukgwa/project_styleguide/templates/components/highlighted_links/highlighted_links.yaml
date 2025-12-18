@@ -1,0 +1,15 @@
+context:
+  heading: 'Also of interest'
+  highlighted_links:
+    - type: link
+      value:
+        url: '#'
+        link_text: 'Department for Children, Schools and Families (DCSF)'
+    - type: link
+      value:
+        url: '#'
+        link_text: 'Department for Children, Schools and Families (DCSF)'
+    - type: link
+      value:
+        url: '#'
+        link_text: 'Department for Children, Schools and Families (DCSF)'
