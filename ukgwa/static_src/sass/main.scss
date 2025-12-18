@@ -25,11 +25,10 @@
 @use 'components/navigation/breadcrumbs-nav';
 @use 'components/navigation/footerlinks-nav';
 @use 'components/navigation/footercolumn-nav';
-@use 'components/navigation/secondary-nav';
 
 // Layout
-@use 'layout/footer';
-@use 'layout/header';
+@use 'global/header';
+@use 'global/footer';
 
 @tailwind base;
 @tailwind components;

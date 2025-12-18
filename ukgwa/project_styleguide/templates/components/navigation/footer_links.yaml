@@ -1,10 +1,17 @@
 context:
   footer_links:
-    - dummy
-    - dummy
-    - dummy
-
-tags:
-  include_block:
-    'link with nav_type="footerlinks-nav"':
-      template_name: 'components/navigation/menu_item.html'
+    - value:
+        title: Accessibility
+        url: '#'
+        page:
+          title: Accessibility
+    - value:
+        title: Take down Policy
+        url: '#'
+        page:
+          title: Take down Policy
+    - value:
+        title: Cookies
+        url: '#'
+        page:
+          title: Cookies

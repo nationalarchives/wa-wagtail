@@ -1,8 +1,35 @@
 context:
   footer_nav:
-    - dummy
-    - dummy
-    - dummy
+    - value:
+        heading: Quick links
+        links:
+          - title: Archived Websites
+            url: '#'
+            page:
+              title: Archived Websites
+          - title: Archived Social Channels
+            url: '#'
+            page:
+              title: Archived Social Channels
+          - title: Submit a Website or Channel
+            url: '#'
+            page:
+              title: Submit a Website or Channel
+          - title: About us
+            url: '#'
+            page:
+              title: About us
+    - value:
+        heading: Other websites
+        links:
+          - title: The National Archives
+            url: 'https://www.nationalarchives.gov.uk/'
+            page:
+              title: The National Archives
+          - title: The National Archives Trust
+            url: 'https://www.nationalarchivestrust.org.uk/'
+            page:
+              title: The National Archives Trust
 
 tags:
   include_block:

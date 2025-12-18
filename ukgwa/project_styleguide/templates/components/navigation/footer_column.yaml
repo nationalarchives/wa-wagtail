@@ -1,12 +1,16 @@
 context:
   value:
-    heading: Column heading
+    heading: Quick links
     links:
-      - dummy
-      - dummy
-      - dummy
-
-tags:
-  include_block:
-    'item with nav_type="footercolumn-nav"':
-      template_name: 'components/navigation/menu_item.html'
+      - title: Archived Websites
+        url: '#'
+        page:
+          title: Archived Websites
+      - title: Archived Social Channels
+        url: '#'
+        page:
+          title: Archived Social Channels
+      - title: Submit a Website or Channel
+        url: '#'
+        page:
+          title: Submit a Website or Channel
