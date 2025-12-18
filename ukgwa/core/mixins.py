@@ -1,6 +1,6 @@
 from django.db import models
 
-from wagtail.admin.panels import FieldPanel
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.fields import StreamField
 
 from .blocks import ExternalLinkBlock
@@ -35,6 +35,11 @@ class HighlightedLinksMixin(models.Model):
     def get_highlighted_links_panels():
         """Return the panel configuration for highlighted links"""
         return [
-            FieldPanel("highlighted_links_heading"),
-            FieldPanel("highlighted_links"),
+            MultiFieldPanel(
+                [
+                    FieldPanel("highlighted_links_heading"),
+                    FieldPanel("highlighted_links"),
+                ],
+                heading="Highlighted links",
+            )
         ]
