@@ -1,42 +1,40 @@
 {% load wagtailembeds_tags %}
 
-<div>
+<div class="video-embed">
     {% if value.title %}
-        <h3>{{ value.title }}</h3>
+        <h2 class="video-embed__title heading heading--two">{{ value.title }}</h2>
     {% endif %}
 
     {% if value.description %}
-        <p>{{ value.description }}</p>
+        <p class="video-embed__description">{{ value.description }}</p>
     {% endif %}
 
     {% if is_youtube %}
-        <div data-youtube-embed>
+        <div class="video-embed__container" data-youtube-embed>
             {# Placeholder #}
-            <div data-youtube-placeholder-container>
-                <img src="{{ thumbnail_url }}" alt="Video Thumbnail">
+            <div class="video-embed__placeholder" data-youtube-placeholder-container>
+                <img class="video-embed__thumbnail" src="{{ thumbnail_url }}" alt="Video thumbnail">
 
-                <div>
-                    <p>This content is hosted by a third party. By showing the external content you accept the <a href="https://www.youtube.com/t/terms" target="_blank">terms and conditions</a> of YouTube.</p>
-                    <div>
-                        <a href="#" data-youtube-consent-button>I accept</a>>
-                        <div>
-                            <input type="checkbox" id="youtube-consent-checkbox" data-youtube-save-prefs>
-                            <label for="youtube-consent-checkbox">Don't ask me again</label>
+                <div class="video-embed__consent">
+                    <p class="video-embed__consent-text">This content is hosted by a third party. By showing the external content you accept the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">terms and conditions</a> of YouTube.</p>
+                    <div class="video-embed__consent-actions">
+                        <button type="button" class="button button--primary video-embed__accept-button" data-youtube-consent-button>I accept</button>
+                        <div class="video-embed__checkbox-wrapper">
+                            <input type="checkbox" id="youtube-consent-checkbox-{{ value.embed.url|slugify }}" class="video-embed__checkbox" data-youtube-save-prefs>
+                            <label for="youtube-consent-checkbox-{{ value.embed.url|slugify }}" class="video-embed__checkbox-label">Don't ask me again</label>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {# Embed itself #}
-            <div data-youtube-embed-container>
-                <div>
-                    {% embed value.embed.url %}
-                </div>
+            {# Embed itself - hidden by default until consent is given #}
+            <div class="video-embed__embed-container hidden" data-youtube-embed-container>
+                {% embed value.embed.url %}
             </div>
         </div>
     {% else %}
-        <div>
-            <div>
+        <div class="video-embed__container">
+            <div class="video-embed__generic-embed">
                 {% embed value.embed.url %}
             </div>
         </div>

@@ -27,16 +27,6 @@ $tna-colours: (
 
 // --------------------------------- Colors ------------------------------------
 
-$color--primary: #444;
-$color--secondary: #fff;
-$color--tertiary: #f9f9f9;
-
-$color--white: #fff;
-$color--black: #000;
-$color--off-black: #0b0c0c;
-
-$color--default: $color--off-black;
-
 :root {
     // Base colours (from TNA Frontend brand palette)
     --color-white: #{map.get($tna-colours, 'white')};
@@ -93,11 +83,12 @@ $color--default: $color--off-black;
     --theme-dropdown-text: var(--color-white);
     --theme-button-background: var(--color-black);
     --theme-button-text: var(--color-white);
-    --theme-button-hover: var(--color--not-black);
+    --theme-button-hover: var(--color-not-black);
     --theme-border: var(--color-grey-300);
     --theme-border-inverted: var(--color-grey-600);
     --theme-icon: var(--color-grey-500);
     --theme-link: var(--color-black);
+    --theme-link-visited: var(--color-not-black);
     --theme-link-hover: var(--theme-primary);
     --theme-link-focus: var(--theme-primary);
     --theme-link-invert: var(--color-white);
@@ -127,6 +118,8 @@ $color--default: $color--off-black;
     --contrast-link: var(--color-white);
     --contrast-link-visited: var(--color-white);
     --contrast-keyline: var(--theme-border-inverted);
+    --link: var(--theme-link);
+    --link-visited: var(--theme-link-visited);
 }
 
 // --------------------------------- Fonts -------------------------------------
@@ -219,5 +212,5 @@ $z-index: (
 // --------------------------------- Accessibility -----------------------------
 
 $focus-bg: #ffbf47;
-$focus-color: $color--off-black;
+$focus-color: var(--color-not-black);
 $focus-width: 3px;

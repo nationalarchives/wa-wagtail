@@ -5,6 +5,7 @@
     background-image: none;
     border: 0;
     box-shadow: none;
+    transition: background-color $transition;
 
     &:hover {
         cursor: pointer;
@@ -17,6 +18,19 @@
             border-color: $focus-bg;
             background-color: $focus-bg;
             color: $focus-color;
+        }
+    }
+
+    &--primary {
+        background-color: var(--theme-button-background);
+        color: var(--theme-button-text);
+        padding: $grid-xs $grid-s;
+
+        &:hover,
+        &:focus,
+        &:visited {
+            background-color: var(--theme-button-hover);
+            color: var(--theme-button-text);
         }
     }
 }

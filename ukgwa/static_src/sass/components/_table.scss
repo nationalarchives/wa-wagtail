@@ -41,7 +41,7 @@
         background: linear-gradient(
             to right,
             rgba(255, 255, 255, 0) -50%,
-            $color--white 100%
+            var(--color-background-primary) 100%
         );
         opacity: 1;
         transition: opacity 0.25s ease;

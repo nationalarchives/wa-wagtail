@@ -53,6 +53,7 @@ small {
 .heading {
     &--one {
         @include font-size(heading-one);
+        line-height: 1.2;
     }
 
     &--two {

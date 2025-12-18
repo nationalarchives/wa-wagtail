@@ -2,6 +2,8 @@ import { initAll } from '@nationalarchives/frontend/nationalarchives/all';
 
 import Header from './components/header';
 import SkipLink from './components/skip-link';
+import YouTubeConsentManager from './components/youtube-consent-manager';
+import TableHint from './components/table-hint';
 
 import '../sass/main.scss';
 
@@ -12,6 +14,8 @@ function initComponent(ComponentClass) {
 
 document.addEventListener('DOMContentLoaded', () => {
     initComponent(SkipLink);
+    initComponent(YouTubeConsentManager);
+    initComponent(TableHint);
 
     // Initialise custom header with extended mobile breakpoint
     // Must be initialised before initAll() to prevent TNA's default header from taking over

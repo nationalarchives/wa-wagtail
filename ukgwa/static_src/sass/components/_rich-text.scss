@@ -1,11 +1,30 @@
 @use 'config' as *;
 
 .rich-text {
+    a {
+        text-decoration: underline;
+    }
+
+    ul,
+    ol {
+        padding-left: 1.5em;
+    }
+
     ul {
-        list-style: inside disc;
+        list-style: outside disc;
     }
 
     ol {
-        list-style: inside decimal;
+        list-style: outside decimal;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    p,
+    ul,
+    ol {
+        margin-bottom: $grid-s;
     }
 }
