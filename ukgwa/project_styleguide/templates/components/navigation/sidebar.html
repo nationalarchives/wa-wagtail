@@ -1,14 +1,19 @@
 {% load wagtailcore_tags %}
-{% if children %}
-    <div class="sidebar">
-        <div class="sidebar__inner">
-            <h2>Also in {{ page.title }}</h2>
-            <ul>
-                {% for child in children %}
-                    <li><a href="{% pageurl child %}">{{ child.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+
+<div class="sidebar">
+    <div class="sidebar__inner">
+        {% if siblings %}
+            <nav class="sidebar__nav">
+                <h2 class="heading heading--two sidebar__heading">Also in {{ parent.title }}</h2>
+                <ul class="sidebar__list">
+                    {% for sibling in siblings %}
+                        <li class="sidebar__item" {% if sibling.pk == current_page.pk %}aria-current="page"{% endif %}>
+                            <a class="sidebar__link {% if sibling.pk == current_page.pk %}sidebar__link--active{% endif %}" href="{% pageurl sibling %}">{{ sibling.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+        {% endif %}
     </div>
-{% endif %}
+</div>
+
 

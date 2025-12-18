@@ -1,6 +1,14 @@
 context:
-  children:
-    - title: Page 1
-    - title: Page 2
-    - title: Page 3
-    - title: Page 4
+  parent:
+    title: Section title
+  current_page:
+    pk: 2
+  siblings:
+    - pk: 1
+      title: Page 1
+    - pk: 2
+      title: Page 2
+    - pk: 3
+      title: Page 3
+    - pk: 4
+      title: Page 4

@@ -41,8 +41,12 @@ def footer_nav(context):
 
 @register.inclusion_tag("components/navigation/sidebar.html", takes_context=True)
 def sidebar(context):
+    page = context["page"]
+    parent = page.get_parent()
     return {
-        "children": context["page"].get_children().live().public().in_menu(),
+        "siblings": page.get_siblings().live().public().in_menu(),
+        "parent": parent,
+        "current_page": page,
         "request": context["request"],
     }
 

@@ -32,6 +32,7 @@ h6,
 
     &--two {
         @include font-size(heading-two);
+        line-height: 1.2;
     }
 
     &--three {
