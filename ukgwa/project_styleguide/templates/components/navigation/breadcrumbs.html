@@ -10,14 +10,14 @@
                             {% if ancestor_page.depth > 2 %}
                                 <li class="breadcrumb__item">
                                     {% include "components/icons/icon.html" with name="arrow-back" classname="breadcrumb__icon" %}
-                                    <a class="breadcrumb__link" href="{% pageurl ancestor_page %}">{{ ancestor_page.title }}</a><span class="breadcrumb__separator" aria-hidden="true"> ></span>
+                                    <a class="breadcrumb__link" href="{% pageurl ancestor_page %}">{{ ancestor_page.title }}</a>
+                                    <span class="breadcrumb__separator" aria-hidden="true"> ></span>
                                 </li>
                             {% else %}
                                 <li class="breadcrumb__item breadcrumb__item--home">
                                     {% include "components/icons/icon.html" with name="arrow-back" classname="breadcrumb__icon" %}
-                                    <a class="breadcrumb__link" href="/">
-                                        Home
-                                    </a><span class="breadcrumb__separator" aria-hidden="true"> ></span>
+                                    <a class="breadcrumb__link" href="/">Home</a>
+                                    <span class="breadcrumb__separator" aria-hidden="true"> ></span>
                                 </li>
                             {% endif %}
                         {% endif %}

@@ -16,6 +16,7 @@
         align-items: center;
         color: var(--theme-text-invert);
         margin: 0 5px 0 0;
+        gap: 5px;
 
         // On small and medium breakpoints, only show the parent section
         &:not(:nth-last-child(2)) {
