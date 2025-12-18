@@ -2,14 +2,41 @@
 @use 'sass:color';
 
 .card {
-    padding: 20px;
-    // Extra border for high-contrast mode users.
-    border: 1px solid transparent;
-    transition: background-color $transition;
-}
+    $root: &;
+    padding: $grid-s;
+    border-top: 5px solid var(--theme-primary);
+    background-color: var(--theme-primary-background);
 
-.card-with-image {
-    &:only-child {
-        max-width: 260px;
+    &--clickable {
+        position: relative;
+
+        #{$root}__link {
+            &::before {
+                content: '';
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+
+    &__link {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    &__heading {
+        font-family: $font--tertiary;
+        font-weight: $weight--bold;
+        margin-bottom: $grid-xs;
+        text-decoration: underline;
+    }
+
+    &__summary {
+        margin: 0;
+        color: var(--theme-text-meta);
     }
 }

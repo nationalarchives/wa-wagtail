@@ -1,0 +1,27 @@
+@use 'config' as *;
+
+.related-content {
+    background-color: var(--theme-secondary);
+
+    &__container {
+        padding: $grid-m 0 $grid-l;
+
+        @include media-query(large) {
+            padding: $grid-l 0 $grid-xl;
+        }
+    }
+
+    &__heading {
+        margin-bottom: $grid-s;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $grid-s;
+
+        @include media-query(large) {
+            gap: $grid-m;
+        }
+    }
+}

@@ -30,8 +30,10 @@
                 {% sidebar %}
             </div>
         </div>
+
+        {% include "components/related_content/related_content.html" with related_pages=page.related_pages %}
     </div>
 
-    {% include "components/related_content/related_content.html" with related_pages=page.related_pages %}
+
 
 {% endblock %}
