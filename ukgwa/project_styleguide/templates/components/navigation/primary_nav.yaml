@@ -1,8 +1,24 @@
 context:
   primary_nav:
-    - dummy
-    - dummy
-    - dummy
+    - item:
+      value:
+        text: Archived Websites
+        page:
+          title: Archived Websites
+    - item:
+      value:
+        text: Archived Social Channels
+        page:
+          title: Archived Social Channels
+    - item:
+      value:
+        text: About
+        external_url: '#'
+    - item:
+      value:
+        text: Submit a Website or Channel
+        page:
+          title: Submit a Website or Channel
 
 tags:
   include_block:
@@ -11,6 +27,5 @@ tags:
       template_name: 'components/navigation/menu_item.html'
 
   pageurl:
-    'page as item_url':
-      target_var: item_url
+    link:
       raw: '#'

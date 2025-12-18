@@ -1,6 +1,7 @@
 {% load wagtailcore_tags %}
-<nav class="grid md:grid-cols-2 lg:grid-cols-3" aria-label="Primary footer">
-    {% for footer in footer_nav %}
-        {% include_block footer %}
+
+<div class="tna-footer__navigation tna-column tna-column--flex-2 tna-column--full-medium tna-column--full-small tna-column--full-tiny tna-columns tna-columns--2 tna-columns--1-tiny">
+    {% for column in footer_nav %}
+        {% include_block column %}
     {% endfor %}
 </nav>

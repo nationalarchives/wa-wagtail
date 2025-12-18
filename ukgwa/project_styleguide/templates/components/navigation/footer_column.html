@@ -1,12 +1,19 @@
 {% load wagtailcore_tags %}
 <div>
     {% if value.heading %}
-        <p class="heading--5">{{ value.heading }}</p>
+        <h3 class="footer__heading tna-footer__navigation-block-heading tna-heading-s">
+            {{ value.heading }}
+        </h3>
     {% endif %}
-    <ul class="footercolumn-nav">
-        {% for item in value.links %}
-            <li class="footercolumn-nav__item">
-                {% include_block item with nav_type="footercolumn-nav" %}
+    <ul class="tna-footer__navigation-block-items tna-ul tna-ul--plain">
+        {% for link in value.links %}
+            <li class="tna-footer__navigation-block-item">
+                <a
+                    href="{% if .page %}{% pageurl link.page %}{% elif link.external_link %}{{ link.external_link }}{% endif %}"
+                    class="tna-footer__navigation-block-item-link"
+                >
+                    {{ link.text }}
+                </a>
             </li>
         {% endfor %}
     </ul>

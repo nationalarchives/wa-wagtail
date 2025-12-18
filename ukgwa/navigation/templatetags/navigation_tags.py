@@ -57,17 +57,3 @@ def footer_links(context):
         ].footer_links,
         "request": request,
     }
-
-
-# Footer nav snippets
-@register.inclusion_tag(
-    "components/navigation/footer_logo_cloud.html", takes_context=True
-)
-def footer_logo_cloud(context):
-    request = context["request"]
-    return {
-        "footer_logos": context["settings"]["navigation"][
-            "NavigationSettings"
-        ].footer_logo_cloud,
-        "request": request,
-    }

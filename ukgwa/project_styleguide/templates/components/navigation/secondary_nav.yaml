@@ -1,10 +1,12 @@
 context:
   secondary_nav:
-    - dummy
-    - dummy
-    - dummy
+    - item:
+      value:
+        text: About us
+        page:
+          title: About us
 
 tags:
-  include_block:
-    link with nav_type="secondary-nav":
-      template_name: 'components/navigation/menu_item.html'
+  pageurl:
+    link:
+      raw: '#'

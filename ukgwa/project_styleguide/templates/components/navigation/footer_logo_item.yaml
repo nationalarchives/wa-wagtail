@@ -1,5 +1,0 @@
-context:
-  value:
-    url: '#'
-    text: Menu title
-    logo: !testimage
