@@ -2,3 +2,10 @@ context:
   value:
     caption: Some caption
     image: !testimage
+  image: !testimage
+  image_alt_text: 'Alt text for image'
+
+tags:
+  responsive_image:
+    'image=image rendition_1x="width-500" rendition_2x="width-1000" alt_text=image_alt_text':
+      template_name: 'components/responsive_image/responsive_image.html'

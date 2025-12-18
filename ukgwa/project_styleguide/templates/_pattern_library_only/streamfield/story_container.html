@@ -1,4 +1,37 @@
-{% include "components/streamfield/heading_block.html" %}
-{% include "components/streamfield/image_block.html" %}
-{% include "components/streamfield/quote_block.html" %}
-{% include "components/streamfield/call_to_action_block.html" %}
+<div class="sf__block sf__block--heading">
+    <h2>Who we are</h2>
+</div>
+<div class="sf__block sf__block--paragraph">
+    <div class="rich-text">
+        <p>The UK Government Web Archive team is part of The National Archives. We are a dedicated group of archivists, developers, and digital preservation specialists committed to preserving the UK's online government heritage.</p>
+        <p>Our team works collaboratively with government departments across the UK to ensure comprehensive coverage of government web presence.</p>
+    </div>
+</div>
+<div class="sf__block sf__block--heading">
+    <h2>What we do</h2>
+</div>
+<div class="sf__block sf__block--paragraph">
+    <div class="rich-text">
+        <p>Our responsibilities include:</p>
+        <ul>
+            <li>Identifying and selecting government websites for archiving</li>
+            <li>Operating web crawling infrastructure</li>
+            <li>Ensuring long-term preservation of archived content</li>
+            <li>Providing public access to the archive</li>
+        </ul>
+    </div>
+</div>
+<div class="sf__block sf__block--quote">
+    {% include "components/streamfield/quote_block.html" %}
+</div>
+<div class="sf__block sf__block--image">
+    <div class="image-block">
+        <div class="image-block__image">
+            {% include "components/responsive_image/responsive_image.html" %}
+        </div>
+        <p class="image-block__caption">The UK Government Web Archive team at The National Archives.</p>
+    </div>
+</div>
+<div class="sf__block sf__block--call_to_action">
+    {% include "components/streamfield/call_to_action_block.html" %}
+</div>

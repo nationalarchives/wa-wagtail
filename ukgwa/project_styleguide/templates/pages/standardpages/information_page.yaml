@@ -1,7 +1,63 @@
 context:
   page:
-    title: Test info page
-    introduction: Some intro text
+    title: Our team
+    introduction: Meet the team behind the UK Government Web Archive.
+    get_ancestors:
+      - is_root: false
+        depth: 2
+        title: Home
+      - is_root: false
+        depth: 3
+        title: About
+      - is_root: false
+        depth: 4
+        title: Our team
+    related_pages:
+      - title: How we archive
+        listing_title: How we archive
+        listing_summary: Learn about our web archiving process and the technology we use.
+        listing_image: !testimage
+      - title: Contact us
+        listing_title: Contact us
+        listing_summary: Get in touch with the UK Government Web Archive team.
+        listing_image: !testimage
+      - title: Frequently asked questions
+        listing_title: Frequently asked questions
+        listing_summary: Find answers to common questions about the archive.
+        listing_image: !testimage # Context for sidebar navigation
+
+
+  parent:
+    title: About
+  current_page:
+    pk: 2
+  siblings:
+    - pk: 1
+      title: Overview
+    - pk: 2
+      title: Our team
+    - pk: 3
+      title: Our partners
+    - pk: 4
+      title: Contact us
+  # Context for streamfield blocks
+  value:
+    - dummy
+  # Context for heading_block
+  # Note: 'value' is used for heading text, but we need it for stream_block loop too
+  # Context for quote_block
+  quote: 'The UK Government Web Archive is an invaluable resource for researchers and historians.'
+  attribution: 'The National Archives'
+  link_text: 'Learn more about our mission'
+  link_url: '#'
+  # Context for responsive_image.html
+  img_class: ''
+  alt_text: 'Sample image alt text'
+  lazy_loading: true
+  rendition_1x: !testrendition 'fill-500x400'
+  rendition_2x: !testrendition 'fill-1000x600'
+  rendition_1x_webp: !testrendition 'fill-500x400'
+  rendition_2x_webp: !testrendition 'fill-1000x600'
 
 tags:
   include_block:
@@ -26,3 +82,14 @@ tags:
   footer_links:
     '':
       template_name: 'components/navigation/footer_links.html'
+  responsive_image:
+    'image=image rendition_1x="width-500" rendition_2x="width-1000" alt_text=image_alt_text':
+      template_name: 'components/responsive_image/responsive_image.html'
+  pageurl:
+    item as item_url:
+      target_var: item_url
+      raw: '#'
+    ancestor_page:
+      raw: '#'
+    sibling:
+      raw: '#'
