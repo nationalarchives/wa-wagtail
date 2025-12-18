@@ -2,6 +2,22 @@ context:
   page:
     title: Test info page
     introduction: Some intro text
+    get_children:
+      live: []
+    highlighted_links_heading: 'Also of interest'
+    highlighted_links:
+      - type: link
+        value:
+          url: '#'
+          link_text: 'Department for Children, Schools and Families (DCSF)'
+      - type: link
+        value:
+          url: '#'
+          link_text: 'Welsh Government guidance on education'
+      - type: link
+        value:
+          url: '#'
+          link_text: 'Additional support and resources'
 
 tags:
   include_block:
@@ -17,6 +33,9 @@ tags:
   primary_nav:
     '':
       template_name: 'components/navigation/primary_nav.html'
+      context:
+        page:
+          title: 'Test info page'
   secondary_nav:
     '':
       template_name: 'components/navigation/secondary_nav.html'

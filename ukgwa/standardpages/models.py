@@ -2,15 +2,16 @@ from django.conf import settings
 from django.core.paginator import Paginator
 from django.db import models
 
-from wagtail.admin.panels import FieldPanel, InlinePanel
+from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.search import index
 
 from ukgwa.core.blocks import StoryBlock
+from ukgwa.core.mixins import HighlightedLinksMixin
 from ukgwa.core.models import BasePage
 
 
-class InformationPage(BasePage):
+class InformationPage(HighlightedLinksMixin, BasePage):
     template = "pages/standardpages/information_page.html"
 
     introduction = models.TextField(blank=True)
@@ -21,16 +22,14 @@ class InformationPage(BasePage):
         index.SearchField("body"),
     ]
 
-    content_panels = BasePage.content_panels + [
-        FieldPanel("introduction"),
-        FieldPanel("body"),
-        InlinePanel(
-            "page_related_pages",
-            heading="Related pages",
-            label="Related page",
-            help_text="Related pages are promoted to users, so make sure they're relevant.",
-        ),
-    ]
+    content_panels = (
+        BasePage.content_panels
+        + [
+            FieldPanel("introduction"),
+            FieldPanel("body"),
+        ]
+        + HighlightedLinksMixin.get_highlighted_links_panels()
+    )
 
 
 class IndexPage(BasePage):
