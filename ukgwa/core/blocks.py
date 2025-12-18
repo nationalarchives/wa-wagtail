@@ -1,15 +1,11 @@
 from wagtail import blocks
-from wagtail.contrib.table_block.blocks import TableBlock as WagtailTableBlock
-from wagtail.contrib.typed_table_block.blocks import (
-    TypedTableBlock as WagtailTypedTableBlock,
-)
 from wagtail.embeds.blocks import EmbedBlock as WagtailEmbedBlock
 from wagtail.embeds.embeds import get_embed
 from wagtail.embeds.exceptions import EmbedException
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.snippets.blocks import SnippetChooserBlock
 
-from ..constants import GROUP_CALLOUTS, GROUP_MEDIA, GROUP_TABLES, GROUP_TEXT
+from ..constants import GROUP_CALLOUTS, GROUP_MEDIA, GROUP_TEXT
 
 
 class RichTextBlock(blocks.RichTextBlock):
@@ -86,32 +82,6 @@ class ImageBlock(blocks.StructBlock):
             ctx["image_alt_text"] = value["image"].title
 
         return ctx
-
-
-class TableBlock(WagtailTableBlock):
-    class Meta:
-        label = "Simple table"
-        group = GROUP_TABLES
-        template = "components/streamfield/table_block.html"
-
-
-class TypedTableBlock(blocks.StructBlock):
-    caption = blocks.CharBlock(required=False)
-    table = WagtailTypedTableBlock(
-        [
-            ("numeric", blocks.FloatBlock()),
-            (
-                "rich_text",
-                RichTextBlock(features=["bold", "italic", "link", "ol", "ul"]),
-            ),
-        ]
-    )
-
-    class Meta:
-        label = "Rich text and numeric table"
-        icon = "table"
-        group = GROUP_TABLES
-        template = "components/streamfield/typed_table_block.html"
 
 
 class QuoteBlock(blocks.StructBlock):
@@ -280,10 +250,13 @@ class StoryBlock(blocks.StreamBlock):
         group=GROUP_CALLOUTS,
         template="components/streamfield/call_to_action_block.html",
     )
-    table = TableBlock()
-    typed_table = TypedTableBlock()
-    accordion = AccordionBlock()
-    stat_block = StatBlock()
 
     class Meta:
         template = "components/streamfield/stream_block.html"
+
+
+class TableBlock(blocks.StaticBlock):
+    """Deprecated: Stub for migration compatibility only"""
+
+    class Meta:
+        admin_text = "Deprecated table block"
