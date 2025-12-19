@@ -1,0 +1,20 @@
+{% load wagtailcore_tags %}
+
+{% if settings.core.SystemMessagesSettings.active_alert %}
+    {% with alert=settings.core.SystemMessagesSettings %}
+        <div
+            role="region"
+            aria-label="Site alert"
+        >
+            {% include "components/icons/icon.html" with name="alert-placeholder" classname="icon--alert-placeholder" %}
+            {% if alert.title_alert %}
+                <span>
+                    {{ alert.title_alert }}
+                </span>
+            {% endif %}
+            <span>
+                {{ alert.description_alert|richtext }}
+            </span>
+        </div>
+    {% endwith %}
+{% endif %}
