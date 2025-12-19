@@ -4,6 +4,8 @@ from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.fields import RichTextField
 
+from bs4 import BeautifulSoup
+
 from ukgwa.images.models import CustomImage
 
 __all__ = [
@@ -63,9 +65,42 @@ class SystemMessagesSettings(BaseSiteSetting):
         default="<p>You may be trying to find a page that doesn&rsquo;t exist or has been moved.</p>",
     )
 
+    title_alert = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        help_text="Optional title, displayed next to the alert icon.",
+    )
+    description_alert = RichTextField(features=["link"], null=True, blank=False)
+    active_alert = models.BooleanField(
+        default=False,
+        help_text=(
+            "Check this field to show the alert banner, "
+            "uncheck it to hide the alert banner."
+        ),
+    )
+
     panels = [
-        MultiFieldPanel([FieldPanel("title_404"), FieldPanel("body_404")], "404 page")
+        MultiFieldPanel([FieldPanel("title_404"), FieldPanel("body_404")], "404 page"),
+        MultiFieldPanel(
+            [
+                FieldPanel("title_alert"),
+                FieldPanel("description_alert"),
+                FieldPanel("active_alert"),
+            ],
+            "Alert Banner",
+        ),
     ]
+
+    def clean(self):
+        if self.description_alert:
+            soup = BeautifulSoup(self.description_alert, "html.parser")
+            # Remove all elements that might cause new lines
+            for block_tag in ["p", "br"]:
+                for tag in soup.find_all(block_tag):
+                    tag.unwrap()  # This removes the tag but keeps its content
+            self.description_alert = str(soup)
+        return super().clean()
 
 
 @register_setting(icon="view")
