@@ -15,7 +15,7 @@ Optional parameters:
 {% endcomment %}
 
 {% if related_pages %}
-    <div class="related-content{% if modifier %} related-content--{{ modifier }}{% endif %}">
+    <section class="related-content{% if modifier %} related-content--{{ modifier }}{% endif %}" aria-labelledby="{{ heading_id|default:'related-content-heading' }}">
         <div class="related-content__container u-layout">
             <h2 class="related-content__heading{% if intro %} related-content__heading--tight{% endif %} heading heading--two col-span-12" id="{{ heading_id|default:'related-content-heading' }}">
                 {{ heading|default:"Also of interest" }}
@@ -23,10 +23,10 @@ Optional parameters:
             {% if intro %}
                 <p class="related-content__intro col-span-12">{{ intro }}</p>
             {% endif %}
-            <section class="related-content__list col-span-12" aria-labelledby="{{ heading_id|default:'related-content-heading' }}">
+            <div class="related-content__list col-span-12" role="list">
                 {% for item in related_pages %}
                     {% pageurl item as item_url %}
-                    <article class="card card--clickable{% if modifier %} card--{{ modifier }}{% endif %}">
+                    <article class="card card--clickable{% if modifier %} card--{{ modifier }}{% endif %}" role="listitem">
                         {% if item.category %}
                             <span class="card__category supporting">{{ item.category }}</span>
                         {% endif %}
@@ -41,7 +41,7 @@ Optional parameters:
                         {% endif %}
                     </article>
                 {% endfor %}
-            </section>
+            </div>
         </div>
-    </div>
+    </section>
 {% endif %}
