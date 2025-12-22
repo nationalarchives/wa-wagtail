@@ -13,7 +13,7 @@
         margin-right: 0;
         margin-bottom: 20px;
 
-        @include media-query(tablet-portrait) {
+        @include media-query(medium) {
             margin-right: 20px;
         }
 
@@ -25,8 +25,8 @@
     &__icon {
         width: 30px;
         height: 30px;
-        color: $color--black;
-        fill: $color--black;
+        color: var(--theme-text-default);
+        fill: var(--theme-text-default);
     }
 
     &__name {

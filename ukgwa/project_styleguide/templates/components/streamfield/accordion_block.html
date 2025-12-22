@@ -5,9 +5,12 @@
         <details class="accordion">
             <summary class="accordion__summary">
                 <h2 class="accordion__header">
-                    {% include "components/icons/icon.html" with name="arrow" classname="accordion__icon" %}
-                    <span class="accordion__title">
+                    <span class="accordion__title heading heading--four">
                         {{ accordion.title }}
+                    </span>
+                    <span class="accordion__toggle" aria-hidden="true">
+                        <span class="accordion__toggle-text" data-show="Show" data-hide="Hide">Show</span>
+                        {% include "components/icons/icon.html" with name="accordion-arrow" classname="accordion__icon" %}
                     </span>
                 </h2>
             </summary>

@@ -2,27 +2,29 @@
 
 {% with page_ancestors=page.get_ancestors %}
     {% if page_ancestors|length > 2 %}
-        <nav aria-label="breadcrumb">
-            <ul class="breadcrumbs-nav">
-                {% for ancestor_page in page_ancestors %}
-                    {% if not ancestor_page.is_root %}
-                        {% if ancestor_page.depth > 2 %}
-                            <li class="breadcrumbs-nav__item">
-                                <a class="breadcrumbs-nav__link" href="{% pageurl ancestor_page %}">{{ ancestor_page.title }}</a>
-                                {% include "components/icons/icon.html" with name="arrow" classname="breadcrumbs-nav__icon" %}
-                            </li>
-                        {% else %}
-                            <li class="nav__item nav__item--breadcrumb">
-                                <a class="nav__link nav__link--breadcrumb" href="/">
-                                    {% include "components/icons/icon.html" with name="home" %}
-                                    Home
-                                </a>
-                            </li>
+        <nav aria-label="breadcrumb" class="breadcrumb">
+            <div class="u-layout breadcrumb__container">
+                <ul class="breadcrumb__list col-span-12 supporting">
+                    {% for ancestor_page in page_ancestors %}
+                        {% if not ancestor_page.is_root %}
+                            {% if ancestor_page.depth > 2 %}
+                                <li class="breadcrumb__item">
+                                    {% include "components/icons/icon.html" with name="arrow-back" classname="breadcrumb__icon" %}
+                                    <a class="breadcrumb__link" href="{% pageurl ancestor_page %}">{{ ancestor_page.title }}</a>
+                                    <span class="breadcrumb__separator" aria-hidden="true"> ></span>
+                                </li>
+                            {% else %}
+                                <li class="breadcrumb__item breadcrumb__item--home">
+                                    {% include "components/icons/icon.html" with name="arrow-back" classname="breadcrumb__icon" %}
+                                    <a class="breadcrumb__link" href="/">Home</a>
+                                    <span class="breadcrumb__separator" aria-hidden="true"> ></span>
+                                </li>
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
-                {% endfor %}
-                <li class="breadcrumbs-nav__item">{{ page.title }}</li>
-            </ul>
+                    {% endfor %}
+                    <li class="breadcrumb__item">{{ page.title }}</li>
+                </ul>
+            </div>
         </nav>
     {% endif %}
 {% endwith %}

@@ -80,7 +80,6 @@
     "@glidejs/glide": "^3.2.3",
     "@nationalarchives/frontend": "^0.29.1",
     "js-cookie": "^3.0.5",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "lite-youtube-embed": "^0.3.4"
   }
 }

@@ -15,16 +15,21 @@
 @use 'components/call-to-action';
 @use 'components/card';
 @use 'components/icon';
+@use 'components/breadcrumb';
+@use 'components/introduction';
+@use 'components/page-header';
 @use 'components/responsive-object';
 @use 'components/rich-text';
+@use 'components/sf';
+@use 'components/sidebar';
+@use 'components/related-content';
+@use 'components/image-block';
 @use 'components/skip-link';
+@use 'components/stat-block';
 @use 'components/sprites-preview-icons';
 @use 'components/table';
-
-// Navigation
-@use 'components/navigation/breadcrumbs-nav';
-@use 'components/navigation/footerlinks-nav';
-@use 'components/navigation/footercolumn-nav';
+@use 'components/utilities';
+@use 'components/video-embed';
 
 // Layout
 @use 'global/header';

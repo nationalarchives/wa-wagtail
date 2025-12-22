@@ -1,0 +1,26 @@
+@use 'config' as *;
+
+.page-header {
+    background-color: var(--theme-primary);
+    color: var(--theme-text-invert);
+    margin-bottom: $grid-m;
+
+    @include media-query(medium) {
+        margin-bottom: $grid-l;
+    }
+
+    &__container {
+        padding-top: $grid-l;
+        padding-bottom: $grid-m;
+
+        @include media-query(medium) {
+            padding-top: $grid-xl;
+            padding-bottom: $grid-l;
+        }
+    }
+
+    &__title {
+        font-weight: $weight--bold;
+        margin: 0;
+    }
+}

@@ -1,6 +1,14 @@
 context:
   value:
     - dummy
+  # Context for responsive_image.html included in story_container
+  img_class: ''
+  alt_text: 'Sample image alt text'
+  lazy_loading: true
+  rendition_1x: !testrendition 'fill-500x400'
+  rendition_2x: !testrendition 'fill-1000x600'
+  rendition_1x_webp: !testrendition 'fill-500x400'
+  rendition_2x_webp: !testrendition 'fill-1000x600'
 
 tags:
   include_block:

@@ -23,40 +23,18 @@ h6,
     margin: 0 0 1rem;
 }
 
-// ------------------------------- Default sizes ----------------------------
-h1 {
-    @include font-size(heading-one);
-}
-
-h2 {
-    @include font-size(heading-two);
-}
-
-h3 {
-    @include font-size(heading-three);
-}
-
-h4 {
-    @include font-size(heading-four);
-}
-
-h5,
-h6 {
-    @include font-size(heading-five);
-}
-
-small {
-    @include font-size(supporting);
-}
-
 // ------------------------------- Heading ----------------------------------
 .heading {
     &--one {
-        @include font-size(heading-one);
+        @include font-size(heading-one) {
+            line-height: 1.2;
+        }
     }
 
     &--two {
-        @include font-size(heading-two);
+        @include font-size(heading-two) {
+            line-height: 1.2;
+        }
     }
 
     &--three {

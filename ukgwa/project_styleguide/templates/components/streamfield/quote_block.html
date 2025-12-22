@@ -1,7 +1,7 @@
-<blockquote>
-    <p>{{ quote }}</p>
-    {% if attribution %}{{ attribution }}{% endif %}
+<blockquote class="blockquote">
+    <p class="blockquote__quote">{{ quote }}</p>
+    {% if attribution %}<p class="blockquote__attribution">{{ attribution }}</p>{% endif %}
     {% if link_url and link_text %}
-        <a href="{{ link_url }}">{{ link_text }}</a>
+        <p class="blockquote__link rich-text"><a href="{{ link_url }}">{{ link_text }}</a></p>
     {% endif %}
 </blockquote>

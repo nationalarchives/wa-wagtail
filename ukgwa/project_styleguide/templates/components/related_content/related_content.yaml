@@ -3,7 +3,12 @@ context:
     - title: Related page
       listing_title: Related page listing title
       listing_summary: Some related page intro
-      listing_image: !testimage
+    - title: Related page
+      listing_title: Related page listing title
+      listing_summary: Some related page intro
+    - title: Related page
+      listing_title: Related page listing title
+      listing_summary: Some related page intro
 
 tags:
   pageurl:

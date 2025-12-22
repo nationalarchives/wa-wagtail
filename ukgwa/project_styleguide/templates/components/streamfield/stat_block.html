@@ -1,0 +1,16 @@
+<div class="stat-block">
+    {% for stat in stats %}
+    <div class="stat-block__item rich-text">
+        {% if stat.number %}
+        <span class="stat-block__number">{{ stat.number }}</span>
+        {% endif %}
+        {% if stat.sentence %}
+        <p class="stat-block__sentence">{{ stat.sentence }}</p>
+        {% endif %}
+        {% if stat.link_url and stat.link_text %}
+        <a href="{{ stat.link_url }}" class="stat-block__link">{{ stat.link_text }}</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
