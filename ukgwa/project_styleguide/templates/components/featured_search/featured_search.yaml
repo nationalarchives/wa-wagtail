@@ -1,6 +1,4 @@
 context:
   heading: Find archived government websites and posts
-  placeholder: Search by key word or website URL
   button_text: Search
-  help_text: Search by key word or website URL
-
+  help_text: Type keywords separated by commas, or a full phrase. You can also search by URL.

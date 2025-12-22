@@ -7,30 +7,38 @@ Usage:
     {% include "components/featured_search/featured_search.html" with heading="Find archived content" %}
 
 Optional parameters:
-    - heading: Main heading for the search section
-    - placeholder: Placeholder text for the input
+    - heading: Main heading and label for the search section
     - button_text: Text for the submit button
     - help_text: Helper text below the form
 {% endcomment %}
 
-<section class="featured-search" aria-labelledby="featured-search-heading">
+<section class="featured-search">
     <div class="featured-search__container u-layout">
         <div class="featured-search__content col-span-full">
-            <h2 class="featured-search__heading heading heading--three" id="featured-search-heading">
-                {{ heading|default:"Search" }}
-            </h2>
-            <form class="featured-search__form" role="search" aria-labelledby="featured-search-heading">
-                <label for="featured-search-input" class="visually-hidden">{{ placeholder|default:"Search" }}</label>
-                <input
-                    type="search"
-                    id="featured-search-input"
-                    name="q"
-                    class="featured-search__input"
-                    placeholder="{{ placeholder|default:"Search" }}"
-                />
-                <button type="submit" class="featured-search__button button button--primary">
-                    {{ button_text|default:"Search" }}
-                </button>
+            <form class="featured-search__form" role="search">
+                <label for="featured-search-input" class="featured-search__label heading heading--two">{{ heading|default:"Find archived government websites and documents" }}</label>
+                <div class="featured-search__options">
+                    <label class="featured-search__radio">
+                        <input type="radio" name="search_type" value="keyword" checked />
+                        Keyword search
+                    </label>
+                    <label class="featured-search__radio">
+                        <input type="radio" name="search_type" value="url" />
+                        Search by Website URL
+                    </label>
+                </div>
+                <div class="featured-search__input-container">
+                    <input
+                        type="search"
+                        id="featured-search-input"
+                        name="q"
+                        class="featured-search__input"
+                    />
+
+                    <button type="submit" class="featured-search__button button button--primary">
+                        {{ button_text|default:"Search" }}
+                    </button>
+                </div>
             </form>
             {% if help_text %}
                 <p class="featured-search__help supporting">{{ help_text }}</p>
