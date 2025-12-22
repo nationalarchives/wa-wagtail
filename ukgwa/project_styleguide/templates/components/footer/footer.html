@@ -28,14 +28,14 @@
         <ul class="footer__social tna-ul tna-ul--plain tna-footer__social-items">
           {% if settings.core.SocialMediaSettings.twitter_handle %}
             <li class="tna-footer__social-item">
-                <a class="tna-footer__social-item-link" href="https://twitter.com/{{ settings.core.SocialMediaSettings.twitter_handle }}">
+                <a class="tna-footer__social-item-link" href="https://twitter.com/{{ settings.core.SocialMediaSettings.twitter_handle }}" aria-label="Follow us on X (formerly Twitter)">
                     {% include "components/icons/icon.html" with name="twitter" classname="icon--footer-social" viewbox="0 0 512 512" %}
                 </a>
             </li>
           {% endif %}
           {% if settings.core.SocialMediaSettings.facebook_app_id %}
             <li class="tna-footer__social-item">
-                <a class="tna-footer__social-item-link" href="https://www.facebook.com/{{ settings.core.SocialMediaSettings.facebook_app_id }}">
+                <a class="tna-footer__social-item-link" href="https://www.facebook.com/{{ settings.core.SocialMediaSettings.facebook_app_id }}" aria-label="Follow us on Facebook">
                     {% include "components/icons/icon.html" with name="facebook" classname="icon--footer-social" viewbox="0 0 26 23" %}
                 </a>
             </li>
