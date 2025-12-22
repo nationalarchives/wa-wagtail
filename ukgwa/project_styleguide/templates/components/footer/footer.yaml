@@ -12,4 +12,6 @@ tags:
   footer_links:
     '':
       template_name: 'components/navigation/footer_links.html'
-
+  include_block:
+    footer:
+      template_name: 'components/navigation/footer_column.html'

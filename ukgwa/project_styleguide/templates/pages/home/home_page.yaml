@@ -44,3 +44,18 @@ tags:
     item as item_url:
       target_var: item_url
       raw: '#'
+  primary_nav:
+    '':
+      template_name: 'components/navigation/primary_nav.html'
+  secondary_nav:
+    '':
+      template_name: 'components/navigation/secondary_nav.html'
+  footer_nav:
+    '':
+      template_name: 'components/navigation/footer_nav.html'
+  footer_links:
+    '':
+      template_name: 'components/navigation/footer_links.html'
+  include_block:
+    footer:
+      template_name: 'components/navigation/footer_column.html'
