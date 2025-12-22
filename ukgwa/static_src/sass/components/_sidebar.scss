@@ -18,6 +18,12 @@
 
         &--active {
             color: var(--theme-link-invert);
+            font-weight: $weight--bold;
+
+            &:visited,
+            &:link {
+                color: var(--theme-link-invert);
+            }
         }
 
         &:link,
