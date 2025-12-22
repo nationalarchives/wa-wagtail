@@ -15,13 +15,33 @@
         margin-bottom: $grid-s;
     }
 
+    &__intro {
+        margin-top: 0;
+        margin-bottom: $grid-m;
+        color: var(--theme-text-80);
+    }
+
     &__list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
         gap: $grid-s;
+
+        @include media-query(medium) {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
         @include media-query(large) {
             gap: $grid-m;
         }
+    }
+
+    // Archive highlights modifier - white background
+    &--archive-highlights {
+        background-color: var(--theme-primary-background);
+    }
+
+    // Recently archived modifier - light grey background
+    &--recently-archived {
+        background-color: var(--theme-secondary-background);
     }
 }

@@ -1,23 +1,46 @@
 context:
   page:
-    title: Homepage
-    strapline: This is a home page
-    call_to_action:
-      title: Stub content
-      summary: Check out our awesome stub content
-      get_link_text: Click here
-      get_link_url: '#'
+    title: UK Government Web Archive
+    strapline: We capture, preserve and make accessible UK central government information published on the web. The Web Archive includes videos, tweets, images and websites dating from 1996 to the present day.
+    hero_image: !testimage
+    search_heading: Find archived government websites and posts
+    search_placeholder: Search by key word or website URL
+    search_button_text: Search
+    search_help_text: Search by key word or website URL
+    archive_highlights:
+      - title: Brexit transition period (2016–2020)
+        listing_title: Brexit transition period (2016–2020)
+        category: HISTORICAL MOMENTS
+        source_url: www.open.gov.uk
+      - title: Archived tweets from No10 during COVID
+        listing_title: Archived tweets from No10 during COVID
+        category: SURPRISING FINDS
+        source_url: "@10DowningStreet"
+      - title: Backdated HMRC tax forms
+        listing_title: Backdated HMRC tax forms
+        category: POLICIES & PUBLIC SERVICES
+        source_url: www.hmrc.gov.uk
+    recently_archived_intro: The latest websites and social media channels added to the archive.
+    recently_archived:
+      - title: Department for Children, Schools and Families (DCSF)
+        listing_title: Department for Children, Schools and Families (DCSF)
+        source_url: www.open.gov.uk
+      - title: Department for Children, Schools and Families (DCSF)
+        listing_title: Department for Children, Schools and Families (DCSF)
+        source_url: www.open.gov.uk
+      - title: Department for Children, Schools and Families (DCSF)
+        listing_title: Department for Children, Schools and Families (DCSF)
+        source_url: www.open.gov.uk
 
 tags:
-  primary_nav:
-    '':
-      template_name: 'components/navigation/primary_nav.html'
-  secondary_nav:
-    '':
-      template_name: 'components/navigation/secondary_nav.html'
-  footer_nav:
-    '':
-      template_name: 'components/navigation/footer_nav.html'
-  footer_links:
-    '':
-      template_name: 'components/navigation/footer_links.html'
+  image:
+    background_image fill-768x600 as hero_bg_mobile:
+      raw: "/media/images/rain.width-500.png"
+      target_var: hero_bg_mobile
+    background_image fill-1920x800 as hero_bg_desktop:
+      raw: "/media/images/rain.width-1000.png"
+      target_var: hero_bg_desktop
+  pageurl:
+    item as item_url:
+      target_var: item_url
+      raw: '#'

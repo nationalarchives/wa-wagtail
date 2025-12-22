@@ -1,0 +1,41 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% comment %}
+Hero component for the homepage.
+
+Usage:
+    {% include "components/hero/hero.html" with title="UK Government Web Archive" strapline="Description text" background_image=image %}
+
+Parameters:
+    - title: The main heading (required)
+    - strapline: Description text below the title
+    - background_image: Wagtail image object for background
+{% endcomment %}
+
+<section class="hero" aria-labelledby="hero-title">
+    {% if background_image %}
+        <div class="hero__background">
+            {% image background_image fill-768x600 as hero_bg_mobile %}
+            {% image background_image fill-1920x800 as hero_bg_desktop %}
+            <img
+                src="{{ hero_bg_desktop.url }}"
+                srcset="{{ hero_bg_mobile.url }} 768w, {{ hero_bg_desktop.url }} 1920w"
+                sizes="100vw"
+                width="{{ hero_bg_desktop.width }}"
+                height="{{ hero_bg_desktop.height }}"
+                alt=""
+                role="presentation"
+                class="hero__background-image"
+            />
+        </div>
+    {% endif %}
+
+    <div class="hero__container u-layout">
+        <div class="hero__content col-span-full lg:col-span-6">
+            <h1 class="hero__title heading heading--one" id="hero-title">{{ title }}</h1>
+            {% if strapline %}
+                <p class="hero__strapline">{{ strapline }}</p>
+            {% endif %}
+        </div>
+    </div>
+</section>

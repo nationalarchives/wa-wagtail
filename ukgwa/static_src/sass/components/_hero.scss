@@ -1,0 +1,85 @@
+@use 'config' as *;
+
+.hero {
+    $root: &;
+    background-color: var(--theme-inverted-background);
+
+    // Establish stacking context for medium+ overlay layout
+    @include media-query(medium) {
+        position: relative;
+        z-index: 0;
+    }
+
+    // Background image layer
+    &__background {
+        overflow: hidden;
+
+        // Absolute positioning for overlay on medium+
+        @include media-query(medium) {
+            position: absolute;
+            inset: 0;
+
+            @include z-index(under);
+        }
+    }
+
+    &__background-image {
+        width: 100%;
+        height: auto;
+        display: block;
+
+        @include media-query(medium) {
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+    }
+
+    // Main content container
+    &__container {
+        padding-top: $grid-m;
+        padding-bottom: $grid-m;
+
+        @include media-query(medium) {
+            position: relative;
+            padding-top: $grid-l;
+            padding-bottom: $grid-l;
+
+            @include z-index(base);
+        }
+
+        @include media-query(large) {
+            padding-top: $grid-xl;
+            padding-bottom: $grid-xl;
+        }
+    }
+
+    // Content panel with semi-transparent background
+    &__content {
+        padding: $grid-m;
+
+        @include media-query(medium) {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+
+        @include media-query(large) {
+            padding: $grid-l;
+        }
+    }
+
+    &__title {
+        color: var(--theme-text-invert);
+        margin: 0 0 $grid-s;
+    }
+
+    &__strapline {
+        color: var(--theme-text-invert);
+        margin: 0;
+        font-size: map-get($large-font-sizes, body);
+        line-height: $base-line-height;
+
+        @include media-query(large) {
+            font-size: map-get($large-font-sizes, body-feature);
+        }
+    }
+}

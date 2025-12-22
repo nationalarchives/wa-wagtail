@@ -1,0 +1,52 @@
+@use 'config' as *;
+
+.featured-search {
+    background-color: var(--theme-primary);
+    padding: $grid-m 0;
+
+    @include media-query(large) {
+        padding: $grid-l 0;
+    }
+
+    &__content {
+        color: var(--theme-text-invert);
+    }
+
+    &__heading {
+        color: var(--theme-text-invert);
+        margin: 0 0 $grid-s;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: $grid-xs;
+
+        @include media-query(medium) {
+            flex-direction: row;
+        }
+    }
+
+    &__input {
+        flex: 1;
+        padding: $grid-xs $grid-s;
+        border: 2px solid transparent;
+        font-family: $font--secondary;
+        font-size: map-get($large-font-sizes, body);
+
+        &:focus {
+            outline: $focus-width solid $focus-bg;
+            border-color: $focus-color;
+        }
+    }
+
+    &__button {
+        flex-shrink: 0;
+    }
+
+    &__help {
+        color: var(--theme-text-invert);
+        margin: $grid-xs 0 0;
+    }
+}
+
