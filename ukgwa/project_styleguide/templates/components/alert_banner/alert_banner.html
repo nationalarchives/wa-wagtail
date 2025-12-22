@@ -19,7 +19,7 @@ Context:
 
 {% if alert_banner %}
     {% with modifier=alert_banner.modifier|default:"warning" %}
-        <aside class="alert-banner alert-banner--{{ modifier }}" role="alert" aria-live="polite">
+        <div class="alert-banner alert-banner--{{ modifier }}" {% if modifier == "warning" %}role="alert"{% else %}role="status" aria-live="polite"{% endif %}>
             <div class="alert-banner__container u-layout">
                 <div class="alert-banner__alert col-span-full">
                     <span class="alert-banner__icon" aria-hidden="true">
@@ -34,6 +34,6 @@ Context:
                     <p class="alert-banner__message">{{ alert_banner.message }}</p>
                 </div>
             </div>
-        </aside>
+        </div>
     {% endwith %}
 {% endif %}
