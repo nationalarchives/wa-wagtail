@@ -17,7 +17,7 @@ Optional parameters:
 {% if related_pages %}
     <div class="related-content{% if modifier %} related-content--{{ modifier }}{% endif %}">
         <div class="related-content__container u-layout">
-            <h2 class="related-content__heading heading heading--two col-span-12" id="{{ heading_id|default:'related-content-heading' }}">
+            <h2 class="related-content__heading{% if intro %} related-content__heading--tight{% endif %} heading heading--two col-span-12" id="{{ heading_id|default:'related-content-heading' }}">
                 {{ heading|default:"Also of interest" }}
             </h2>
             {% if intro %}
