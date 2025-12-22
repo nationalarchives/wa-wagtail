@@ -26,13 +26,15 @@ h6,
 // ------------------------------- Heading ----------------------------------
 .heading {
     &--one {
-        @include font-size(heading-one);
-        line-height: 1.2;
+        @include font-size(heading-one) {
+            line-height: 1.2;
+        }
     }
 
     &--two {
-        @include font-size(heading-two);
-        line-height: 1.2;
+        @include font-size(heading-two) {
+            line-height: 1.2;
+        }
     }
 
     &--three {
