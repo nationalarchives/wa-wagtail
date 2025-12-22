@@ -21,10 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Must be initialised before initAll() to prevent TNA's default header from taking over
     initComponent(Header);
 
-    // Initialise custom header with extended mobile breakpoint
-    // Must be initialised before initAll() to prevent TNA's default header from taking over
-    initComponent(Header);
-
     // Initialise TNA Frontend components
     initAll();
 });
