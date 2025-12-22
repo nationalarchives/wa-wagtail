@@ -1,0 +1,6 @@
+name: Alert Banner - Positive
+context:
+  alert_banner:
+    message: "Your submission was successful. Thank you for your feedback."
+    modifier: positive
+
