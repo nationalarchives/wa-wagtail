@@ -7,11 +7,20 @@ register = template.Library()
 @register.inclusion_tag("components/navigation/primary_nav.html", takes_context=True)
 def primary_nav(context):
     request = context["request"]
+    page = context.get("page")
+
+    # Get ancestor IDs to check if current page is within a nav item's subtree
+    ancestor_ids = set()
+    if page and hasattr(page, "get_ancestors"):
+        ancestor_ids = set(page.get_ancestors().values_list("pk", flat=True))
+
     return {
         "primary_nav": context["settings"]["navigation"][
             "NavigationSettings"
         ].primary_navigation,
         "request": request,
+        "current_page": page,
+        "ancestor_ids": ancestor_ids,
     }
 
 

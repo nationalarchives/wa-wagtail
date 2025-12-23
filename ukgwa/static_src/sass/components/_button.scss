@@ -25,6 +25,7 @@
         background-color: var(--theme-button-background);
         color: var(--theme-button-text);
         padding: $grid-xs $grid-s;
+        font-weight: $weight--bold;
 
         &:hover,
         &:focus,

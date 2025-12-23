@@ -3,18 +3,25 @@ context:
     - value:
         title: Archived Websites
         page:
+          pk: 1
           title: Archived Websites
     - value:
         title: Archived Social Channels
         page:
+          pk: 2
           title: Archived Social Channels
     - value:
         title: Submit a Website or Channel
         page:
+          pk: 3
           title: Submit a Website or Channel
+  current_page:
+    pk: 1
+  ancestor_ids:
+    - 1
 
 tags:
   pageurl:
-    'link.value.page as item_url':
+    'nav_page as item_url':
       target_var: item_url
       raw: '#'

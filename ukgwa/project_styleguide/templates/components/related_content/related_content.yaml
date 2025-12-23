@@ -1,14 +1,22 @@
 context:
+  heading: Also of interest
+  heading_id: related-content-heading
   related_pages:
     - title: Related page
       listing_title: Related page listing title
       listing_summary: Some related page intro
+      category: CATEGORY TAG
+      source_url: www.example.gov.uk
     - title: Related page
       listing_title: Related page listing title
       listing_summary: Some related page intro
+      category: CATEGORY TAG
+      source_url: www.example.gov.uk
     - title: Related page
       listing_title: Related page listing title
       listing_summary: Some related page intro
+      category: CATEGORY TAG
+      source_url: www.example.gov.uk
 
 tags:
   pageurl:
