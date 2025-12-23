@@ -23,25 +23,14 @@ Optional parameters:
             {% if intro %}
                 <p class="related-content__intro col-span-12">{{ intro }}</p>
             {% endif %}
-            <div class="related-content__list col-span-12" role="list">
+            <ul class="related-content__list col-span-12">
                 {% for item in related_pages %}
                     {% pageurl item as item_url %}
-                    <article class="card card--clickable{% if modifier %} card--{{ modifier }}{% endif %}" role="listitem">
-                        {% if item.category %}
-                            <span class="card__category supporting">{{ item.category }}</span>
-                        {% endif %}
-                        <a class="card__link" href="{{ item_url|default:'#' }}">
-                            <h3 class="card__heading heading heading--four">{% firstof item.listing_title item.title %}</h3>
-                        </a>
-                        {% if item.listing_summary or item.introduction %}
-                            <p class="card__summary supporting">{% firstof item.listing_summary item.introduction %}</p>
-                        {% endif %}
-                        {% if item.source_url %}
-                            <p class="card__source supporting">{{ item.source_url }}</p>
-                        {% endif %}
-                    </article>
+                    {% firstof item.listing_title item.title as card_title %}
+                    {% firstof item.listing_summary item.introduction as card_summary %}
+                    {% include "components/card/card.html" with title=card_title url=item_url summary=card_summary category=item.category source_url=item.source_url modifier=modifier clickable=True heading_level="h3" %}
                 {% endfor %}
-            </div>
+            </ul>
         </div>
     </section>
 {% endif %}

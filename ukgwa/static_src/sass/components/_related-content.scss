@@ -33,6 +33,9 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: $grid-s;
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
         @include media-query(medium) {
             grid-template-columns: repeat(3, 1fr);

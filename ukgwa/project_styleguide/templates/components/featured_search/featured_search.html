@@ -10,9 +10,10 @@ Optional parameters:
     - heading: Main heading and label for the search section
     - button_text: Text for the submit button
     - help_text: Helper text below the form
+    - modifier: Optional BEM modifier class (e.g., "secondary" for secondary theme)
 {% endcomment %}
 
-<section class="featured-search" aria-labelledby="featured-search-heading">
+<section class="featured-search{% if modifier %} featured-search--{{ modifier }}{% endif %}" aria-labelledby="featured-search-heading">
     <div class="featured-search__container u-layout">
         <div class="featured-search__content col-span-full">
             <form class="featured-search__form" role="search" action="https://webarchive.nationalarchives.gov.uk/search/result" method="get">

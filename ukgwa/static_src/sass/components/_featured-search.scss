@@ -1,6 +1,7 @@
 @use 'config' as *;
 
 .featured-search {
+    $root: &;
     background-color: var(--theme-primary);
     padding: $grid-m 0;
 
@@ -96,5 +97,39 @@
     &__help {
         color: var(--theme-text-invert);
         margin: $grid-xs 0 0;
+    }
+
+    // Secondary theme variant
+    &--secondary {
+        margin-bottom: $grid-m;
+        background-color: var(--theme-secondary);
+
+        @include media-query(medium) {
+            margin-bottom: $grid-l;
+        }
+
+        #{$root}__content {
+            color: var(--theme-text-default);
+        }
+
+        #{$root}__label {
+            color: var(--theme-primary);
+        }
+
+        #{$root}__radio {
+            color: var(--theme-text-default);
+
+            input[type='radio'] {
+                border-color: var(--theme-text-default);
+
+                &:checked::after {
+                    background: var(--theme-text-default);
+                }
+            }
+        }
+
+        #{$root}__help {
+            color: var(--theme-text-default);
+        }
     }
 }
