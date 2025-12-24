@@ -1,8 +1,18 @@
 @use 'config' as *;
 
 .call-to-action {
-    background-color: var(--color-pastel-pink);
-    border-left: 4px solid var(--color-maroon);
+    $root: &;
+    background-color: var(--theme-secondary);
+    border-left: 4px solid var(--theme-primary);
+
+    &--sidebar {
+        border-left: 0;
+        border-top: 4px solid var(--theme-primary);
+
+        #{$root}__content {
+            padding: $grid-s $grid-m $grid-l;
+        }
+    }
 
     &__content {
         padding: $grid-s $grid-m $grid-m;
@@ -18,7 +28,7 @@
 
     &__summary {
         margin-bottom: $grid-s;
-        color: var(--theme-text-80);
+        color: var(--theme-text-meta);
         p {
             margin: 0;
         }

@@ -79,12 +79,16 @@ def sidebar(context):
     # Get ancestor IDs to check if current page is within a sibling's subtree
     ancestor_ids = set(page.get_ancestors().values_list("pk", flat=True))
 
+    # Get sidebar_cta from page if available, or from context
+    sidebar_cta = getattr(page, "sidebar_cta", None) or context.get("sidebar_cta")
+
     return {
         "siblings": siblings,
         "parent": parent,
         "current_page": page,
         "ancestor_ids": ancestor_ids,
         "request": context["request"],
+        "sidebar_cta": sidebar_cta,
     }
 
 
