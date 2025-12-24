@@ -1,0 +1,52 @@
+{% load wagtailcore_tags %}
+
+{% comment %}
+Featured search component - prominent search bar section.
+
+Usage:
+    {% include "components/featured_search/featured_search.html" with heading="Find archived content" %}
+
+Optional parameters:
+    - heading: Main heading and label for the search section
+    - button_text: Text for the submit button
+    - help_text: Helper text below the form
+    - modifier: Optional BEM modifier class (e.g., "secondary" for secondary theme)
+{% endcomment %}
+
+<section class="featured-search{% if modifier %} featured-search--{{ modifier }}{% endif %}" aria-labelledby="featured-search-heading">
+    <div class="featured-search__container u-layout">
+        <div class="featured-search__content col-span-full">
+            <form class="featured-search__form" role="search" action="https://webarchive.nationalarchives.gov.uk/search/result" method="get">
+                <label for="featured-search-input" id="featured-search-heading" class="featured-search__label heading heading--two">{{ heading|default:"Find archived government websites and documents" }}</label>
+                <fieldset class="featured-search__options">
+                    <legend class="sr-only">Search type</legend>
+                    <label class="featured-search__radio">
+                        <input type="radio" name="search_type" value="keyword" checked />
+                        Keyword search
+                    </label>
+                    <label class="featured-search__radio">
+                        <input type="radio" name="search_type" value="url" />
+                        Search by Website URL
+                    </label>
+                </fieldset>
+                <div class="featured-search__input-container">
+                    <input
+                        type="search"
+                        id="featured-search-input"
+                        name="q"
+                        class="featured-search__input"
+                        {% if help_text %}aria-describedby="featured-search-help"{% endif %}
+                    />
+
+                    <button type="submit" class="featured-search__button button button--primary">
+                        {{ button_text|default:"Search" }}
+                    </button>
+                </div>
+            </form>
+            {% if help_text %}
+                <p id="featured-search-help" class="featured-search__help supporting">{{ help_text }}</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+

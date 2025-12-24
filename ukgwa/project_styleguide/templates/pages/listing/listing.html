@@ -1,0 +1,30 @@
+{% extends "base_page.html" %}
+{% load wagtailcore_tags wagtailimages_tags navigation_tags static %}
+
+{% block content %}
+    {% include "components/page_header/page_header.html" with title=page.title introduction=page.introduction show_introduction=True modifier="flush" %}
+
+    <div class="listing-page u-layout">
+
+        <div class="listing-page__main col-span-full md:col-span-8">
+            {% if subpages %}
+                <ul class="listing-page__list">
+                    {% for subpage in subpages.object_list.specific %}
+                        {% pageurl subpage as subpage_url %}
+                        {% include "components/listing_item/listing_item.html" with item=subpage url=subpage_url %}
+                    {% endfor %}
+                </ul>
+
+                {% include "components/pagination/numbered_pagination.html" with pagination=pagination %}
+            {% endif %}
+        </div>
+
+        <aside class="listing-page__sidebar col-span-full md:col-span-4">
+            {% sidebar %}
+        </aside>
+    </div>
+
+    {% if related_pages %}
+        {% include "components/related_content/related_content.html" with related_pages=related_pages heading="Also of interest" modifier="archive-highlights" %}
+    {% endif %}
+{% endblock %}

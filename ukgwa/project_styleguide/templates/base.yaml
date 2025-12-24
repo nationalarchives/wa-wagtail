@@ -1,11 +1,10 @@
-context:
-  settings:
-    core:
-      SocialMediaSettings:
-        twitter_handle: 'UKWebArchive'
-        facebook_app_id: 'UKWebArchive'
-
 tags:
+  primary_nav:
+    '':
+      template_name: 'components/navigation/primary_nav.html'
+  secondary_nav:
+    '':
+      template_name: 'components/navigation/secondary_nav.html'
   footer_nav:
     '':
       template_name: 'components/navigation/footer_nav.html'
@@ -15,3 +14,7 @@ tags:
   include_block:
     footer:
       template_name: 'components/navigation/footer_column.html'
+  pageurl:
+    'link.value.page as item_url':
+      target_var: item_url
+      raw: '#'

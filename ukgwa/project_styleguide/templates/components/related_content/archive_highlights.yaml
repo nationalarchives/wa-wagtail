@@ -1,0 +1,24 @@
+context:
+  heading: Archive highlights
+  heading_id: archive-highlights-heading
+  modifier: archive-highlights
+  related_pages:
+    - title: Brexit transition period (2016–2020)
+      listing_title: Brexit transition period (2016–2020)
+      category: HISTORICAL MOMENTS
+      source_url: www.open.gov.uk
+    - title: Archived tweets from No10 during COVID
+      listing_title: Archived tweets from No10 during COVID
+      category: SURPRISING FINDS
+      source_url: "@10DowningStreet"
+    - title: Backdated HMRC tax forms
+      listing_title: Backdated HMRC tax forms
+      category: POLICIES & PUBLIC SERVICES
+      source_url: www.hmrc.gov.uk
+
+tags:
+  pageurl:
+    item as item_url:
+      target_var: item_url
+      raw: '#'
+

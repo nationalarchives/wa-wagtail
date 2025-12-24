@@ -9,6 +9,11 @@
         margin-bottom: $grid-l;
     }
 
+    // Flush variant - no bottom margin (e.g. when followed by featured search)
+    &--flush {
+        margin-bottom: 0;
+    }
+
     &__container {
         padding-top: $grid-l;
         padding-bottom: $grid-m;
@@ -22,5 +27,11 @@
     &__title {
         font-weight: $weight--bold;
         margin: 0;
+        max-width: 800px;
+    }
+
+    &__introduction {
+        margin: $grid-s 0 0;
+        max-width: 48rem;
     }
 }

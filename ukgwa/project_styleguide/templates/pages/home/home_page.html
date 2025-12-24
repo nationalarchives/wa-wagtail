@@ -2,11 +2,21 @@
 {% load wagtailcore_tags wagtailimages_tags static %}
 
 {% block content %}
-    <div class="layout">
-        <h1>{{ page.title }}</h1>
+    {% include "components/hero/hero.html" with title=page.title strapline=page.strapline background_image=page.hero_image %}
 
-        {{ page.strapline }}
+    {% include "components/featured_search/featured_search.html" with heading=page.search_heading button_text=page.search_button_text help_text=page.search_help_text %}
 
-        {% include "components/cta/call_to_action.html" with call_to_action=page.call_to_action %}
-    </div>
+    {% if page.archive_highlights %}
+        {% include "components/related_content/related_content.html" with heading="Archive highlights" heading_id="archive-highlights" modifier="archive-highlights" related_pages=page.archive_highlights %}
+    {% endif %}
+
+    {% if page.recently_archived %}
+        {% include "components/related_content/related_content.html" with heading="Recently archived" heading_id="recently-archived" modifier="recently-archived" intro=page.recently_archived_intro related_pages=page.recently_archived %}
+    {% endif %}
+
+    {% if page.call_to_action %}
+        <div class="layout">
+            {% include "components/cta/call_to_action.html" with call_to_action=page.call_to_action %}
+        </div>
+    {% endif %}
 {% endblock %}

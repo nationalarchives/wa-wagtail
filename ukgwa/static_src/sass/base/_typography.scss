@@ -58,7 +58,9 @@ h6,
     }
 
     &--feature {
-        @include font-size(body-feature);
+        @include font-size(body-feature) {
+            line-height: 1.6;
+        }
     }
 }
 

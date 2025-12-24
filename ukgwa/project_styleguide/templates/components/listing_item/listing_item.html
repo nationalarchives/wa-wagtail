@@ -1,0 +1,34 @@
+{% load wagtailcore_tags %}
+
+{% comment %}
+Listing item component - displays a single item in a listing page.
+
+Usage:
+    <ul class="listing-page__list">
+        {% include "components/listing_item/listing_item.html" with item=subpage %}
+    </ul>
+
+Required parameters:
+    - item: Object with title and url
+
+Optional parameters:
+    - item.listing_title: Override title for display
+    - item.category: Category label displayed above the title
+    - item.posted_date: Date string displayed below the title
+    - url: Override URL (otherwise uses pageurl tag)
+{% endcomment %}
+
+<li class="listing-item">
+    <article>
+        {% if item.category %}
+            <span class="listing-item__category supporting">{{ item.category }}</span>
+        {% endif %}
+        <a class="listing-item__link" href="{{ url|default:'#' }}">
+            <h2 class="listing-item__title heading heading--three">{% firstof item.listing_title item.title %}</h2>
+        </a>
+        {% if item.posted_date %}
+            <p class="listing-item__date supporting">Posted {{ item.posted_date }}</p>
+        {% endif %}
+    </article>
+</li>
+
