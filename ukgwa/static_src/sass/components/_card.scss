@@ -44,12 +44,6 @@
         }
     }
 
-    &--recently-archived {
-        border-left: 1px solid var(--theme-border);
-        border-right: 1px solid var(--theme-border);
-        border-bottom: 1px solid var(--theme-border);
-    }
-
     // Listing variant - simpler style for index pages
     &--listing {
         padding: $grid-s 0;
