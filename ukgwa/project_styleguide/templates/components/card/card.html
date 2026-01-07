@@ -1,28 +1,5 @@
 {% load wagtailcore_tags %}
 
-{% comment %}
-Card component - versatile card for content listings.
-Renders as an <li> containing an <article> - must be used within a <ul> parent.
-
-Usage:
-    <ul>
-        {% include "components/card/card.html" with title=page.title url=page_url %}
-    </ul>
-
-Required parameters:
-    - title: Card heading text
-    - url: Link destination
-
-Optional parameters:
-    - summary: Summary text below the heading
-    - category: Category label above the heading
-    - source_url: Source URL text below the summary
-    - modifier: BEM modifier class (e.g., "listing", "recently-archived")
-    - clickable: Boolean to add clickable modifier (makes entire card clickable)
-    - heading_level: Heading level (default: "h2")
-    - grid_classes: Tailwind grid classes (e.g., "col-span-12 md:col-span-6")
-{% endcomment %}
-
 <li class="card{% if modifier %} card--{{ modifier }}{% endif %}{% if clickable %} card--clickable{% endif %}{% if grid_classes %} {{ grid_classes }}{% endif %}">
     <article>
         {% if category %}
