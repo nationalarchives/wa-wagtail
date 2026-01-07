@@ -34,6 +34,21 @@
     }
 }
 
+// Active state for primary navigation
+.tna-header__navigation-item-link--active {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: var(--theme-primary-background);
+    }
+}
+
 // Override TNA's mobile nav breakpoint from 48em to 64em
 // Apply mobile navigation styles in the range between TNA's breakpoint (48em) and ours
 @media (min-width: 48.0625em) and (max-width: #{$header-mobile-nav-breakpoint}) {

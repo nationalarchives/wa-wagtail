@@ -1,0 +1,4 @@
+context:
+  title: UK Government Web Archive
+  strapline: We capture, preserve and make accessible UK central government information published on the web. The Web Archive includes videos, tweets, images and websites dating from 1996 to the present day.
+  background_image: !testimage

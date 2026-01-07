@@ -1,24 +1,36 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
+{% comment %}
+Related content / content listing component.
+
+Usage:
+    {% include "components/related_content/related_content.html" with related_pages=pages %}
+
+Optional parameters:
+    - heading: Custom heading text (default: "Also of interest")
+    - heading_id: Custom ID for the heading (default: "related-content-heading")
+    - intro: Optional intro text below the heading
+    - modifier: BEM modifier class (e.g., "archive-highlights", "recently-archived")
+    - related_pages: List of page objects to display
+{% endcomment %}
+
 {% if related_pages %}
-    <div class="related-content">
+    <section class="related-content{% if modifier %} related-content--{{ modifier }}{% endif %}" aria-labelledby="{{ heading_id|default:'related-content-heading' }}">
         <div class="related-content__container u-layout">
-            <h2 class="related-content__heading heading heading--two col-span-12" id="related-content-heading">Also of interest</h2>
-            <section class="related-content__list col-span-12" aria-labelledby="related-content-heading">
-                {% if related_pages %}
-                    {% for item in related_pages %}
-                        {% pageurl item as item_url %}
-                        <div class="card card--clickable col-span-3 md:col-span-1">
-                            <a class="card__link" href="{{ item_url }}">
-                                <h3 class="card__heading heading heading--four">{% firstof item.listing_title item.title %}</h3>
-                            </a>
-                            {% if item.listing_summary or item.introduction %}
-                                <p class="card__summary supporting">{% firstof item.listing_summary item.introduction %}</p>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </section>
+            <h2 class="related-content__heading{% if intro %} related-content__heading--tight{% endif %} heading heading--two col-span-12" id="{{ heading_id|default:'related-content-heading' }}">
+                {{ heading|default:"Also of interest" }}
+            </h2>
+            {% if intro %}
+                <p class="related-content__intro col-span-12">{{ intro }}</p>
+            {% endif %}
+            <ul class="related-content__list col-span-12">
+                {% for item in related_pages %}
+                    {% pageurl item as item_url %}
+                    {% firstof item.listing_title item.title as card_title %}
+                    {% firstof item.listing_summary item.introduction as card_summary %}
+                    {% include "components/card/card.html" with title=card_title url=item_url summary=card_summary category=item.category source_url=item.source_url modifier=modifier clickable=True heading_level="h3" %}
+                {% endfor %}
+            </ul>
         </div>
-    </div>
+    </section>
 {% endif %}

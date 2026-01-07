@@ -9,6 +9,10 @@
         list-style: none;
     }
 
+    &__nav {
+        margin-bottom: $grid-m;
+    }
+
     &__link {
         display: block;
         color: var(--theme-link);

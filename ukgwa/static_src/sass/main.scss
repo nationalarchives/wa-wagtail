@@ -15,6 +15,9 @@
 @use 'components/button';
 @use 'components/call-to-action';
 @use 'components/card';
+@use 'components/card-listing';
+@use 'components/listing-page';
+@use 'components/listing-item';
 @use 'components/icon';
 @use 'components/breadcrumb';
 @use 'components/introduction';
@@ -24,6 +27,8 @@
 @use 'components/sf';
 @use 'components/sidebar';
 @use 'components/related-content';
+@use 'components/hero';
+@use 'components/featured-search';
 @use 'components/image-block';
 @use 'components/skip-link';
 @use 'components/stat-block';

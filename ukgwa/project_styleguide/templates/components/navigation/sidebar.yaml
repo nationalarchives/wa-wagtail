@@ -12,3 +12,8 @@ context:
       title: Page 3
     - pk: 4
       title: Page 4
+  sidebar_cta:
+    title: Try the Bookmarklet
+    summary: Access an archived page from any live government website
+    get_link_text: Find out more
+    get_link_url: '#'
