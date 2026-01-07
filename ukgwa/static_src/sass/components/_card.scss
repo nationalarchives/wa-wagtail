@@ -23,9 +23,24 @@
         }
     }
 
+    &--recently-archived {
+        border-left: 1px solid var(--theme-border);
+        border-right: 1px solid var(--theme-border);
+        border-bottom: 1px solid var(--theme-border);
+    }
+
     &__link {
         margin-bottom: 0;
         padding-bottom: 0;
+    }
+
+    &__category {
+        display: block;
+        font-family: $font--tertiary;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--theme-primary);
+        margin-bottom: $grid-xs;
     }
 
     &__heading {
@@ -38,5 +53,11 @@
     &__summary {
         margin: 0;
         color: var(--theme-text-meta);
+    }
+
+    &__source {
+        margin: $grid-xs 0 0;
+        color: var(--theme-text-meta);
+        font-family: $font--tertiary;
     }
 }

@@ -1,24 +1,33 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
 {% if related_pages %}
-    <div class="related-content">
+    <section class="related-content{% if modifier %} related-content--{{ modifier }}{% endif %}" aria-labelledby="{{ heading_id|default:'related-content-heading' }}">
         <div class="related-content__container u-layout">
-            <h2 class="related-content__heading heading heading--two col-span-12" id="related-content-heading">Also of interest</h2>
-            <section class="related-content__list col-span-12" aria-labelledby="related-content-heading">
-                {% if related_pages %}
-                    {% for item in related_pages %}
-                        {% pageurl item as item_url %}
-                        <div class="card card--clickable col-span-3 md:col-span-1">
-                            <a class="card__link" href="{{ item_url }}">
-                                <h3 class="card__heading heading heading--four">{% firstof item.listing_title item.title %}</h3>
-                            </a>
-                            {% if item.listing_summary or item.introduction %}
-                                <p class="card__summary supporting">{% firstof item.listing_summary item.introduction %}</p>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </section>
+            <h2 class="related-content__heading{% if intro %} related-content__heading--tight{% endif %} heading heading--two col-span-12" id="{{ heading_id|default:'related-content-heading' }}">
+                {{ heading|default:"Also of interest" }}
+            </h2>
+            {% if intro %}
+                <p class="related-content__intro col-span-12">{{ intro }}</p>
+            {% endif %}
+            <div class="related-content__list col-span-12" role="list">
+                {% for item in related_pages %}
+                    {% pageurl item as item_url %}
+                    <article class="card card--clickable{% if modifier %} card--{{ modifier }}{% endif %}" role="listitem">
+                        {% if item.category %}
+                            <span class="card__category supporting">{{ item.category }}</span>
+                        {% endif %}
+                        <a class="card__link" href="{{ item_url|default:'#' }}">
+                            <h3 class="card__heading heading heading--four">{% firstof item.listing_title item.title %}</h3>
+                        </a>
+                        {% if item.listing_summary or item.introduction %}
+                            <p class="card__summary supporting">{% firstof item.listing_summary item.introduction %}</p>
+                        {% endif %}
+                        {% if item.source_url %}
+                            <p class="card__source supporting">{{ item.source_url }}</p>
+                        {% endif %}
+                    </article>
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    </section>
 {% endif %}
