@@ -1,0 +1,22 @@
+{% load wagtailcore_tags %}
+
+{% if alert_banner %}
+    {% with modifier=alert_banner.modifier|default:"warning" %}
+        <div class="alert-banner alert-banner--{{ modifier }}" {% if modifier == "warning" %}role="alert"{% else %}role="status" aria-live="polite"{% endif %}>
+            <div class="alert-banner__container u-layout">
+                <div class="alert-banner__alert col-span-full">
+                    <span class="alert-banner__icon" aria-hidden="true">
+                        {% if modifier == "info" %}
+                            {% include "components/icons/icon.html" with name="info-circle" viewbox="0 0 24 24" %}
+                        {% elif modifier == "positive" %}
+                            {% include "components/icons/icon.html" with name="check-circle" viewbox="0 0 24 24" %}
+                        {% else %}
+                            {% include "components/icons/icon.html" with name="warning" viewbox="0 0 24 24" %}
+                        {% endif %}
+                    </span>
+                    <p class="alert-banner__message">{{ alert_banner.message }}</p>
+                </div>
+            </div>
+        </div>
+    {% endwith %}
+{% endif %}

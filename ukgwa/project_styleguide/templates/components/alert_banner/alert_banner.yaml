@@ -1,0 +1,5 @@
+name: Alert Banner
+context:
+  alert_banner:
+    message: "We're currently experiencing an outage with our Search, we're anticipating this being resolved by 1pm GMT"
+    modifier: warning

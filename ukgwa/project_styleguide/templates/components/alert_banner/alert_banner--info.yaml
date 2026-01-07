@@ -1,0 +1,6 @@
+name: Alert Banner - Info
+context:
+  alert_banner:
+    message: "This website uses cookies to improve your experience. Learn more about our cookie policy."
+    modifier: info
+
