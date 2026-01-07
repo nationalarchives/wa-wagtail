@@ -32,13 +32,6 @@ context:
         source_url: www.open.gov.uk
 
 tags:
-  image:
-    background_image fill-768x600 as hero_bg_mobile:
-      raw: '/media/images/rain.width-500.png'
-      target_var: hero_bg_mobile
-    background_image fill-1920x800 as hero_bg_desktop:
-      raw: '/media/images/rain.width-1000.png'
-      target_var: hero_bg_desktop
   pageurl:
     item as item_url:
       target_var: item_url

@@ -79,6 +79,12 @@
         }
     }
 
+    &--recently-archived {
+        border-left: 1px solid var(--theme-border);
+        border-right: 1px solid var(--theme-border);
+        border-bottom: 1px solid var(--theme-border);
+    }
+
     &__link {
         margin-bottom: 0;
         padding-bottom: 0;

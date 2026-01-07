@@ -1,23 +1,11 @@
 {% load wagtailcore_tags %}
 
-{% comment %}
-Featured search component - prominent search bar section.
-
-Usage:
-    {% include "components/featured_search/featured_search.html" with heading="Find archived content" %}
-
-Optional parameters:
-    - heading: Main heading and label for the search section
-    - button_text: Text for the submit button
-    - help_text: Helper text below the form
-    - modifier: Optional BEM modifier class (e.g., "secondary" for secondary theme)
-{% endcomment %}
-
-<section class="featured-search{% if modifier %} featured-search--{{ modifier }}{% endif %}" aria-labelledby="featured-search-heading">
+<section class="featured-search" aria-labelledby="featured-search-heading">
     <div class="featured-search__container u-layout">
         <div class="featured-search__content col-span-full">
-            <form class="featured-search__form" role="search" action="https://webarchive.nationalarchives.gov.uk/search/result" method="get">
-                <label for="featured-search-input" id="featured-search-heading" class="featured-search__label heading heading--two">{{ heading|default:"Find archived government websites and documents" }}</label>
+            <h2 id="featured-search-heading" class="featured-search__heading heading heading--two">{{ heading|default:"Find archived government websites and documents" }}</h2>
+            <form class="featured-search__form" role="search" aria-labelledby="featured-search-heading" action="https://webarchive.nationalarchives.gov.uk/search/result" method="get">
+                <label for="featured-search-input" class="sr-only">Enter search term</label>
                 <fieldset class="featured-search__options">
                     <legend class="sr-only">Search type</legend>
                     <label class="featured-search__radio">

@@ -41,6 +41,10 @@
             grid-template-columns: repeat(3, 1fr);
         }
 
+        @include media-query(medium) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
         @include media-query(large) {
             gap: $grid-m;
         }
