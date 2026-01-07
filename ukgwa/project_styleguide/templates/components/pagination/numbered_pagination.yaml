@@ -1,0 +1,35 @@
+context:
+  pagination:
+    current_page: 1
+    total_pages: 23
+    has_previous: false
+    has_next: true
+    previous_url: '#'
+    next_url: '#'
+    pages:
+      - number: 1
+        url: '#'
+        is_current: true
+        is_ellipsis: false
+      - number: 2
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+      - number: 3
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+      - is_ellipsis: true
+      - number: 21
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+      - number: 22
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+      - number: 23
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+

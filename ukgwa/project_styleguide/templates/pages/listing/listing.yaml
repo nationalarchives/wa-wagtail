@@ -1,0 +1,154 @@
+context:
+  page:
+    title: Archive highlights
+    introduction: Archive highlights is a curated selection of notable pages preserved in the UK Government Web Archive, showcasing interesting moments, websites, and stories captured over time.
+
+  # Context for sidebar navigation
+  parent:
+    title: Websites
+  current_page:
+    pk: 5
+  siblings:
+    - pk: 1
+      title: Browse our A-Z list of archived websites and social media channels
+    - pk: 2
+      title: Access an archived page from a live website
+    - pk: 3
+      title: Limitations of the UK Government Web Archive
+    - pk: 4
+      title: Legal information about re-using UK Government Web Archive content
+    - pk: 5
+      title: Archive highlights
+
+  sidebar_cta:
+    title: Try the Bookmarklet
+    summary: Access an archived page from any live government website
+    get_link_text: Find out more
+    get_link_url: '#'
+
+  subpages:
+    object_list:
+      exists: true
+      specific:
+        - title: Historic HMRC Self Assessment Tax Return (SA100) forms
+          listing_title: Historic HMRC Self Assessment Tax Return (SA100) forms
+          category: DOCUMENTS & FORMS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "21 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: DOCUMENTS & FORMS
+          posted_date: "16 October '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: SURPRISING FINDS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "26 November '25"
+        - title: Brexit transition period (2016–2020)
+          listing_title: Brexit transition period (2016–2020)
+          category: HISTORICAL MOMENTS
+          posted_date: "26 November '25"
+
+  related_pages:
+    - title: Department for Children, Schools and Families (DCSF)
+      listing_title: Department for Children, Schools and Families (DCSF)
+      category: HISTORICAL MOMENTS
+      source_url: www.open.gov.uk
+    - title: Department for Children, Schools and Families (DCSF)
+      listing_title: Department for Children, Schools and Families (DCSF)
+      category: HISTORICAL MOMENTS
+      source_url: www.open.gov.uk
+    - title: Department for Children, Schools and Families (DCSF)
+      listing_title: Department for Children, Schools and Families (DCSF)
+      category: HISTORICAL MOMENTS
+      source_url: www.open.gov.uk
+
+  pagination:
+    current_page: 1
+    total_pages: 23
+    has_previous: false
+    has_next: true
+    previous_url: '#'
+    next_url: '#'
+    pages:
+      - number: 1
+        url: '#'
+        is_current: true
+        is_ellipsis: false
+      - number: 2
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+      - number: 3
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+      - is_ellipsis: true
+      - number: 21
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+      - number: 22
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+      - number: 23
+        url: '#'
+        is_current: false
+        is_ellipsis: false
+
+tags:
+  primary_nav:
+    '':
+      template_name: 'components/navigation/primary_nav.html'
+  secondary_nav:
+    '':
+      template_name: 'components/navigation/secondary_nav.html'
+  footer_nav:
+    '':
+      template_name: 'components/navigation/footer_nav.html'
+  footer_links:
+    '':
+      template_name: 'components/navigation/footer_links.html'
+  sidebar:
+    '':
+      template_name: 'components/navigation/sidebar.html'
+  pageurl:
+    'subpage as subpage_url':
+      target_var: subpage_url
+      raw: '#'
+    'item as item_url':
+      target_var: item_url
+      raw: '#'
+    sibling:
+      raw: '#'
