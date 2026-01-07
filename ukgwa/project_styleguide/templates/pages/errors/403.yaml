@@ -2,11 +2,10 @@ context:
   settings:
     core:
       SystemMessagesSettings:
-        title_404: Page not found
-        body_404: |
-          <p>If you typed the web address, check it is correct.</p>
-          <p>If you pasted the web address, check you copied the entire address.</p>
-          <p>If the web address is correct or you selected a link or button, <a href="#">contact us</a> to let us help.</p>
+        title_403: Access denied
+        body_403: |
+          <p>We cannot process your request.</p>
+          <p>You can try to go back and try again. If the problem persists, please <a href="#">contact us</a>.</p>
 
 tags:
   primary_nav:
