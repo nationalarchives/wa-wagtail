@@ -2,42 +2,24 @@
 {% load wagtailcore_tags wagtailimages_tags navigation_tags static %}
 
 {% block content %}
-    <div class="layout">
-        <h1>{{ page.title }}</h1>
+    {% include "components/page_header/page_header.html" with title=page.title introduction=page.introduction show_introduction=True modifier="flush" %}
 
-        {% if page.introduction %}
-            <p>{{ page.introduction }}</p>
-        {% endif %}
+    {% include "components/featured_search/featured_search.html" with heading=page.search_heading button_text=page.search_button_text help_text=page.search_help_text modifier="secondary" %}
 
-        {% if subpages %}
-            <div class="grid">
+    {% if subpages %}
+        <section class="card-listing">
+            <ul class="card-listing__grid u-layout">
                 {% if subpages.object_list.exists %}
                     {% for subpage in subpages.object_list.specific %}
-                        <a class="card-with-image" href="{% pageurl subpage %}">
-                            {% if subpage.listing_image %}
-                                {% image subpage.listing_image fill-450x300 %}
-                            {% else %}
-                                {# Add a default image here #}
-                            {% endif %}
-                            <div class="card">
-                                <p class="heading--5">
-                                    {% firstof subpage.listing_title subpage.title %}
-                                </p>
-                                {% if subpage.listing_summary or subpage.introduction %}
-                                    <p>{% firstof subpage.listing_summary subpage.introduction %}</p>
-                                {% endif %}
-                            </div>
-                        </a>
+                        {% pageurl subpage as subpage_url %}
+                        {% firstof subpage.listing_title subpage.title as card_title %}
+                        {% firstof subpage.listing_summary subpage.introduction as card_summary %}
+                        {% include "components/card/card.html" with title=card_title url=subpage_url summary=card_summary modifier="listing" clickable=True grid_classes="col-span-12 md:col-span-6" %}
                     {% endfor %}
-                {% else %}
-                    {# no items on this page #}
                 {% endif %}
-            </div>
+            </ul>
+        </section>
 
-            {% include "components/pagination/pagination.html" with paginator_page=subpages %}
-
-        {% else %}
-            {# no items on any page #}
-        {% endif %}
-    </div>
+        {% include "components/pagination/pagination.html" with paginator_page=subpages %}
+    {% endif %}
 {% endblock %}

@@ -2,14 +2,18 @@
 
 <ul class="tna-header__navigation-items">
     {% for link in primary_nav %}
-        {% with children=link.value.page.get_children.live.public.in_menu %}
-            <li
-                class="tna-header__navigation-item"
-            >
-                {% pageurl link.value.page as item_url %}
-                <a class="tna-header__navigation-item-link" tabindex="0" href="{{ item_url }}">
-                    {{ link.value.title|default:link.value.page.title }}
-                </a>
+        {% with nav_page=link.value.page %}
+            <li class="tna-header__navigation-item">
+                {% pageurl nav_page as item_url %}
+                {% if nav_page.pk == current_page.pk or nav_page.pk in ancestor_ids %}
+                    <a class="tna-header__navigation-item-link tna-header__navigation-item-link--active" tabindex="0" href="{{ item_url }}" aria-current="true">
+                        {{ link.value.title|default:nav_page.title }}
+                    </a>
+                {% else %}
+                    <a class="tna-header__navigation-item-link" tabindex="0" href="{{ item_url }}">
+                        {{ link.value.title|default:nav_page.title }}
+                    </a>
+                {% endif %}
             </li>
         {% endwith %}
     {% endfor %}

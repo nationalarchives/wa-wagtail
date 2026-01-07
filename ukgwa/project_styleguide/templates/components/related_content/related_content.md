@@ -15,4 +15,3 @@ Related content / content listing component.
 - `intro`: Optional intro text below the heading
 - `modifier`: BEM modifier class (e.g., "archive-highlights", "recently-archived")
 - `related_pages`: List of page objects to display
-
