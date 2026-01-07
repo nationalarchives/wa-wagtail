@@ -1,6 +1,8 @@
 @use 'config' as *;
 
 .alert-banner {
+    border-bottom: 1px solid var(--theme-primary-background);
+
     &__alert {
         display: flex;
         align-items: center;

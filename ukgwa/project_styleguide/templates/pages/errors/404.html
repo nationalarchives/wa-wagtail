@@ -3,10 +3,20 @@
 
 {% block title %}{{ settings.core.SystemMessagesSettings.title_404 }}{% endblock %}
 
-{% block body_class %}template-404{% endblock %}
+{% block body_class %}template-error{% endblock %}
 
 {% block content %}
-    <h1>{{ settings.core.SystemMessagesSettings.title_404 }}</h1>
 
-    {{ settings.core.SystemMessagesSettings.body_404|richtext }}
+    <div class="page">
+        {% include "components/page_header/page_header.html" with title=settings.core.SystemMessagesSettings.title_404 %}
+
+        <div class="u-layout">
+
+            <div class="u-layout__primary-col col-span-full md:col-span-8 rich-text">
+                {{ settings.core.SystemMessagesSettings.body_404|richtext }}
+            </div>
+
+        </div>
+    </div>
+
 {% endblock %}
