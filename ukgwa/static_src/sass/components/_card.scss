@@ -44,10 +44,45 @@
         }
     }
 
-    &--recently-archived {
-        border-left: 1px solid var(--theme-border);
-        border-right: 1px solid var(--theme-border);
-        border-bottom: 1px solid var(--theme-border);
+    // Listing variant - simpler style for index pages
+    &--listing {
+        padding: $grid-s 0;
+        border-top: 1px solid var(--theme-border);
+        background-color: transparent;
+
+        #{$root}__link {
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                #{$root}__heading {
+                    text-decoration-thickness: 3px;
+                }
+            }
+        }
+
+        #{$root}__heading {
+            font-family: $font--primary;
+            font-weight: $weight--normal;
+            text-underline-offset: 3px;
+            margin-bottom: 0;
+        }
+
+        #{$root}__summary {
+            margin-top: $grid-xxs;
+        }
+    }
+
+    // Override TNA frontend focus styles - !important needed to override vendor CSS
+    // Focus indicator is moved to ::before pseudo-element to wrap entire card
+    &#{$root}--clickable #{$root}__link {
+        &:focus,
+        &:focus-visible {
+            /* stylelint-disable-next-line declaration-no-important */
+            outline: 0 !important;
+            /* stylelint-disable-next-line declaration-no-important */
+            box-shadow: none !important;
+        }
     }
 
     // Listing variant - simpler style for index pages
@@ -77,6 +112,12 @@
         #{$root}__summary {
             margin-top: $grid-xxs;
         }
+    }
+
+    &--recently-archived {
+        border-left: 1px solid var(--theme-border);
+        border-right: 1px solid var(--theme-border);
+        border-bottom: 1px solid var(--theme-border);
     }
 
     &__link {
