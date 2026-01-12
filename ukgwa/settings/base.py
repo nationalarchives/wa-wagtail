@@ -759,7 +759,7 @@ PATTERN_LIBRARY = {
     ),
     "TEMPLATE_SUFFIX": ".html",
     "PATTERN_BASE_TEMPLATE_NAME": "base.html",
-    "BASE_TEMPLATE_NAMES": ["base_page.html"],
+    "BASE_TEMPLATE_NAMES": ["base_page.html", "pages/errors/500.html"],
 }
 
 
